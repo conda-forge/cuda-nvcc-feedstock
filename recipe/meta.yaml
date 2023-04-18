@@ -33,9 +33,6 @@ outputs:
   - name: cuda-nvcc
     files:
       - bin                                              # [linux]
-      - include/crt                                      # [linux]
-      - include/fatbinary_section.h                      # [linux]
-      - include/nvPTXCompiler.h                          # [linux]
       - lib/libnvptxcompiler_static.a                    # [linux]
       - nvvm                                             # [linux]
       - etc/conda/activate.d/cuda-nvcc*_activate.sh      # [linux]
