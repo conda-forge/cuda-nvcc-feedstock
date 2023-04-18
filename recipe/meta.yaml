@@ -31,18 +31,14 @@ build:
 
 outputs:
   - name: cuda-nvcc
-    build:
-      run_exports:
-        strong:
-          - __glibc >=2.17        # [linux]
     files:
-      - bin      # [linux]
-      - include/crt  # [linux]
-      - include/fatbinary_section.h # [linux]
-      - include/nvPTXCompiler.h  # [linux]
-      - lib/libnvptxcompiler_static.a      # [linux]
-      - nvvm     # [linux]
-      - Library\nvvm  # [win]
+      - bin                            # [linux]
+      - include/crt                    # [linux]
+      - include/fatbinary_section.h    # [linux]
+      - include/nvPTXCompiler.h        # [linux]
+      - lib/libnvptxcompiler_static.a  # [linux]
+      - nvvm                           # [linux]
+      - Library\nvvm                   # [win]
     requirements:
       build:
         - {{ compiler("c") }}
