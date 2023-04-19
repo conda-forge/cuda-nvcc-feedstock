@@ -56,12 +56,11 @@ outputs:
       run_constrained:
         - gcc_impl_{{ target_platform }} >=6,<13  # [linux]
         - arm-variant * {{ arm_variant_type }}    # [aarch64]
-        - cmake >=3.20
     test:
       requires:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
-        - cmake >=3.20
+        - cmake
         - ninja
       files:
         - test.cu
@@ -106,6 +105,7 @@ outputs:
         - {{ pin_compatible("cuda-version", max_pin="x.x") }}
       run_constrained:
         - arm-variant * {{ arm_variant_type }}    # [aarch64]
+        - cmake >=3.20
     test:
       commands:
         - test -f $PREFIX/targets/{{ target_name }}/lib/libnvptxcompiler_static.a     # [linux]
