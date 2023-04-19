@@ -27,7 +27,7 @@ source:
     - nvcc.profile.patch.win  # [win]
 
 build:
-  number: 1
+  number: 2
   skip: true  # [osx or win]
 
 outputs:
