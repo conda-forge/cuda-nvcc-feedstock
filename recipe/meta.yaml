@@ -33,12 +33,14 @@ build:
 outputs:
   - name: cuda-nvcc
     files:
-      - bin                                              # [linux]
-      - lib/libnvptxcompiler_static.a                    # [linux]
-      - nvvm                                             # [linux]
-      - etc/conda/activate.d/cuda-nvcc*_activate.sh      # [linux]
-      - etc/conda/deactivate.d/cuda-nvcc*_deactivate.sh  # [linux]
-      - Library\nvvm                                     # [win]
+      - bin                                               # [linux]
+      - targets/{{ target_name }}/bin                     # [linux]
+      - targets/{{ target_name }}/nvvm                    # [linux]
+      - lib/libnvptxcompiler_static.a                     # [linux]
+      - nvvm                                              # [linux]
+      - etc/conda/activate.d/~cuda-nvcc*_activate.sh      # [linux]
+      - etc/conda/deactivate.d/~cuda-nvcc*_deactivate.sh  # [linux]
+      - Library\nvvm                                      # [win]
     requirements:
       build:
         - {{ compiler("c") }}
@@ -86,7 +88,8 @@ outputs:
     build:
       noarch: generic
     files:
-      - targets          # [linux]
+      - targets/{{ target_name }}/include  # [linux]
+      - targets/{{ target_name }}/lib      # [linux]
       - Library\lib      # [win]
       - Library\include  # [win]
       - Library\bin      # [win]
