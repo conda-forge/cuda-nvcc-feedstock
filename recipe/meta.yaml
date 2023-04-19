@@ -133,5 +133,6 @@ about:
   doc_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
+  feedstock-name: cuda-nvcc
   recipe-maintainers:
     - adibbley
