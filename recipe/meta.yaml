@@ -82,6 +82,9 @@ outputs:
   - name: cuda-nvcc_{{ target_platform }}
     build:
       noarch: generic
+      run_exports:
+        strong:
+          - cuda-version >={{ cuda_version }},<{{ cuda_version.split(".")[0]|int + 1 }}
     files:
       - targets/{{ target_name }}/include  # [linux]
       - targets/{{ target_name }}/lib      # [linux]
