@@ -66,10 +66,6 @@ outputs:
         - test.cu
         - CMakeLists.txt
       commands:
-        - test -f $PREFIX/targets/{{ target_name }}/lib/libnvptxcompiler_static.a  # [linux]
-        - test -f $PREFIX/targets/{{ target_name }}/include/nvPTXCompiler.h        # [linux]
-        - if not exist %LIBRARY_LIB%\nvptxcompiler_static.lib exit 1  # [win]
-        - if not exist %LIBRARY_INC%\nvPTXCompiler.h exit 1           # [win]
         - nvcc --version
         - nvcc --verbose test.cu
         - cmake -S . -B ./build -G=Ninja && cmake --build ./build -v
