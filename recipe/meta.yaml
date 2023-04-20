@@ -38,8 +38,8 @@ outputs:
       - targets/{{ target_name }}/nvvm                    # [linux]
       - lib/libnvptxcompiler_static.a                     # [linux]
       - nvvm                                              # [linux]
-      - etc/conda/activate.d/~cuda-nvcc*_activate.sh      # [linux]
-      - etc/conda/deactivate.d/~cuda-nvcc*_deactivate.sh  # [linux]
+      - etc/conda/activate.d/~cuda-nvcc_activate.sh      # [linux]
+      - etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh  # [linux]
       - Library\nvvm                                      # [win]
     requirements:
       build:
