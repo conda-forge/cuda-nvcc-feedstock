@@ -139,6 +139,8 @@ outputs:
         - test -d $PREFIX/targets/{{ target_name }}/nvvm                              # [linux]
         - test -f $PREFIX/targets/{{ target_name }}/lib/libnvptxcompiler_static.a     # [linux]
         - test -f $PREFIX/targets/{{ target_name }}/include/nvPTXCompiler.h           # [linux]
+        - test ! -f $PREFIX/etc/conda/activate.d/~cuda-nvcc_activate.sh               # [linux]
+        - test ! -f $PREFIX/etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh           # [linux]
         - if not exist %LIBRARY_LIB%\nvptxcompiler_static.lib exit 1  # [win]
         - if not exist %LIBRARY_INC%\nvPTXCompiler.h exit 1           # [win]
     about:
