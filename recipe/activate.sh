@@ -6,7 +6,10 @@ export CXXFLAGS_BACKUP="${CXXFLAGS}"
 export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-    if [ -z "${CXX+x}" ]; then echo 'cuda-nvcc: Please add the `compiler("c")` and `compiler("cxx")` packages to the environment.'; exit 1; fi
+    if [ -z "${CXX+x}" ]; then
+        echo 'cuda-nvcc: Please add the `compiler("c")` and `compiler("cxx")` packages to the environment.'
+        exit 1
+    fi
 
     [[ ${target_platform} == "linux-64" ]] && targetsDir="targets/x86_64-linux"
     [[ ${target_platform} == "linux-ppc64le" ]] && targetsDir="targets/ppc64le-linux"
