@@ -102,7 +102,6 @@ outputs:
       doc_url: https://docs.nvidia.com/cuda/index.html
 
   - name: cuda-nvcc-impl_{{ target_platform }}
-  - name: cuda-nvcc-impl_{{ target_platform }}
     build:
       noarch: generic
       missing_dso_whitelist:
