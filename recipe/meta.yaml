@@ -1,4 +1,4 @@
-{% set name = "cuda-nvcc" %}
+{% set name = "cuda-nvcc-split" %}
 {% set version = "12.0.76" %}
 {% set cuda_version = "12.0" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
@@ -27,42 +27,131 @@ source:
     - nvcc.profile.patch.win  # [win]
 
 build:
-  number: 1
+  number: 2
   skip: true  # [osx or win]
 
-requirements:
-  build:
-    - {{ compiler("c") }}
-    - {{ compiler("cxx") }}
-    - arm-variant * {{ arm_variant_type }}  # [aarch64]
-    - sysroot_{{ target_platform }} 2.17    # [linux]
-  host:
-    - cuda-version {{ cuda_version }}
-  run:
-    - {{ pin_compatible("cuda-version", max_pin="x.x") }}
-    - cuda-cudart-dev
-  run_constrained:
-    - gcc_impl_{{ target_platform }} >=6,<13  # [linux]
-    - arm-variant * {{ arm_variant_type }}  # [aarch64]
-    - cmake >=3.20
+outputs:
+  - name: cuda-nvcc
+    files:
+      - bin                                               # [linux]
+      - lib/libnvptxcompiler_static.a                     # [linux]
+      - nvvm                                              # [linux]
+    requirements:
+      build:
+        - {{ compiler("c") }}
+        - {{ compiler("cxx") }}
+        - arm-variant * {{ arm_variant_type }}  # [aarch64]
+        - sysroot_{{ target_platform }} 2.17    # [linux]
+      host:
+        - cuda-version {{ cuda_version }}
+        - cuda-cudart-dev
+      run:
+        - {{ pin_compatible("cuda-version", max_pin="x.x") }}
+        - {{ pin_subpackage("cuda-nvcc_" + target_platform, exact=True) }}
+        - cuda-cudart-dev
+      run_constrained:
+        - gcc_impl_{{ target_platform }} >=6,<13  # [linux]
+        - arm-variant * {{ arm_variant_type }}    # [aarch64]
+    test:
+      requires:
+        - {{ compiler("c") }}
+        - {{ compiler("cxx") }}
+        - cmake
+        - ninja
+      files:
+        - test.cu
+        - CMakeLists.txt
+      commands:
+        - nvcc --version
+        - nvcc --verbose test.cu
+        - cmake -S . -B ./build -G=Ninja && cmake --build ./build -v
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: Compiler for CUDA applications.
+      description: |
+        Compiler for CUDA applications.
+      doc_url: https://docs.nvidia.com/cuda/index.html
 
-test:
-  requires:
-    - {{ compiler("c") }}
-    - {{ compiler("cxx") }}
-    - cmake >=3.20
-    - ninja
-  files:
-    - test.cu
-    - CMakeLists.txt
-  commands:
-    - test -f $PREFIX/targets/{{ target_name }}/lib/libnvptxcompiler_static.a  # [linux]
-    - test -f $PREFIX/targets/{{ target_name }}/include/nvPTXCompiler.h        # [linux]
-    - if not exist %LIBRARY_LIB%\nvptxcompiler_static.lib exit 1  # [win]
-    - if not exist %LIBRARY_INC%\nvPTXCompiler.h exit 1           # [win]
-    - nvcc --version
-    - nvcc --verbose test.cu
-    - cmake -S . -B ./build -G=Ninja && cmake --build ./build -v
+  - name: cuda-nvcc_{{ target_platform }}
+    build:
+      noarch: generic
+    run_exports:
+      strong:
+        - cuda-version >={{ cuda_version }},<{{ cuda_version.split(".")[0]|int + 1 }}
+    files:
+      - etc/conda/activate.d/~cuda-nvcc_activate.sh      # [linux]
+      - etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh  # [linux]
+    requirements:
+      run:
+        - {{ pin_subpackage("cuda-nvcc-impl_" + target_platform, exact=True) }}
+    test:
+      commands:
+        - test -f $PREFIX/etc/conda/activate.d/~cuda-nvcc_activate.sh      # [linux]
+        - test -f $PREFIX/etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh  # [linux]
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: Compiler for CUDA applications.
+      description: |
+        Compiler for CUDA applications.
+      doc_url: https://docs.nvidia.com/cuda/index.html
+
+  - name: cuda-nvcc-impl_{{ target_platform }}
+    build:
+      noarch: generic
+      missing_dso_whitelist:
+        # Need to avoid missing linkage errors due to `noarch`.
+        # Library dependencies are pulled in.
+        - "*"
+    run_exports:
+      strong:
+        - cuda-version >={{ cuda_version }},<{{ cuda_version.split(".")[0]|int + 1 }}
+    files:
+      - targets/{{ target_name }}/bin      # [linux]
+      - targets/{{ target_name }}/nvvm     # [linux]
+      - targets/{{ target_name }}/include  # [linux]
+      - targets/{{ target_name }}/lib      # [linux]
+      - Library\bin      # [win]
+      - Library\nvvm     # [win]
+      - Library\include  # [win]
+      - Library\lib      # [win]
+    requirements:
+      build:
+        - {{ compiler("c") }}
+        - {{ compiler("cxx") }}
+        - arm-variant * {{ arm_variant_type }}  # [aarch64]
+        - sysroot_{{ target_platform }} 2.17    # [linux]
+      host:
+        - cuda-version {{ cuda_version }}
+      run:
+        - {{ pin_compatible("cuda-version", max_pin="x.x") }}
+      run_constrained:
+        - gcc_impl_{{ target_platform }} >=6,<13  # [linux]
+        - arm-variant * {{ arm_variant_type }}    # [aarch64]
+    test:
+      commands:
+        - test -f $PREFIX/targets/{{ target_name }}/bin/nvcc                          # [linux]
+        - test -d $PREFIX/targets/{{ target_name }}/nvvm                              # [linux]
+        - test -f $PREFIX/targets/{{ target_name }}/lib/libnvptxcompiler_static.a     # [linux]
+        - test -f $PREFIX/targets/{{ target_name }}/include/nvPTXCompiler.h           # [linux]
+        - test ! -f $PREFIX/etc/conda/activate.d/~cuda-nvcc_activate.sh               # [linux]
+        - test ! -f $PREFIX/etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh           # [linux]
+        - if not exist %LIBRARY_LIB%\nvptxcompiler_static.lib exit 1  # [win]
+        - if not exist %LIBRARY_INC%\nvPTXCompiler.h exit 1           # [win]
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: Compiler for CUDA applications.
+      description: |
+        Compiler for CUDA applications.
+      doc_url: https://docs.nvidia.com/cuda/index.html
 
 about:
   home: https://developer.nvidia.com/cuda-toolkit
@@ -75,5 +164,6 @@ about:
   doc_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
+  feedstock-name: cuda-nvcc
   recipe-maintainers:
     - adibbley
