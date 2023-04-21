@@ -16,16 +16,16 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
     # (Leo checking if this is needed): Avoid GCC warnings due to using headers from `BUILD_PREFIX`
     ln -s "${BUILD_PREFIX}/${targetsDir}/include/crt" "${CUDA_INCLUDE_DIR}"
 
-    export CFLAGS="${CFLAGS} -isystem ${CUDA_INCLUDE_DIR}"
-    export CPPFLAGS="${CPPFLAGS} -isystem ${CUDA_INCLUDE_DIR}"
-    export CXXFLAGS="${CXXFLAGS} -isystem ${CUDA_INCLUDE_DIR}"
-    export NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX} -isystem ${CUDA_INCLUDE_DIR}"
+    export CFLAGS="${CFLAGS} -I${CUDA_INCLUDE_DIR}"
+    export CPPFLAGS="${CPPFLAGS} -I${CUDA_INCLUDE_DIR}"
+    export CXXFLAGS="${CXXFLAGS} -I${CUDA_INCLUDE_DIR}"
+    export NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX} -I${CUDA_INCLUDE_DIR}"
 else
   # Todo: Either symlink headers to "${PREFIX}/include" in `cuda-nvcc`
   #       or add logic here to handle `target_platform` outside conda-build
   CUDA_INCLUDE_DIR="${PREFIX}/include"
-  export CFLAGS="${CFLAGS} -isystem ${CUDA_INCLUDE_DIR}"
-  export CPPFLAGS="${CPPFLAGS} -isystem ${CUDA_INCLUDE_DIR}"
-  export CXXFLAGS="${CXXFLAGS} -isystem ${CUDA_INCLUDE_DIR}"
-  export NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX} -isystem ${CUDA_INCLUDE_DIR}"
+  export CFLAGS="${CFLAGS} -I${CUDA_INCLUDE_DIR}"
+  export CPPFLAGS="${CPPFLAGS} -I${CUDA_INCLUDE_DIR}"
+  export CXXFLAGS="${CXXFLAGS} -I${CUDA_INCLUDE_DIR}"
+  export NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX} -I${CUDA_INCLUDE_DIR}"
 fi
