@@ -73,6 +73,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc.svg)](https://anaconda.org/conda-forge/cuda-nvcc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc.svg)](https://anaconda.org/conda-forge/cuda-nvcc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc.svg)](https://anaconda.org/conda-forge/cuda-nvcc) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc--impl_linux--64-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc-impl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc-impl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc-impl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc-impl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc-impl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc-impl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc-impl_linux-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc_linux--64-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-64) |
 
 Installing cuda-nvcc
@@ -85,16 +86,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cuda-nvcc, cuda-nvcc_linux-64` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `cuda-nvcc, cuda-nvcc-impl_linux-64, cuda-nvcc_linux-64` can be installed with `conda`:
 
 ```
-conda install cuda-nvcc cuda-nvcc_linux-64
+conda install cuda-nvcc cuda-nvcc-impl_linux-64 cuda-nvcc_linux-64
 ```
 
 or with `mamba`:
 
 ```
-mamba install cuda-nvcc cuda-nvcc_linux-64
+mamba install cuda-nvcc cuda-nvcc-impl_linux-64 cuda-nvcc_linux-64
 ```
 
 It is possible to list all of the versions of `cuda-nvcc` available on your platform with `conda`:
@@ -190,7 +191,4 @@ Feedstock Maintainers
 =====================
 
 * [@adibbley](https://github.com/adibbley/)
-
-
-<!-- dummy commit to enable rerendering -->
 
