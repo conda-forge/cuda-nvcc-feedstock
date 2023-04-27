@@ -1,41 +1,38 @@
 #!/bin/bash
 
+mv "${SRC_DIR}/targets" "${PREFIX}/targets"
+
+# Work from cross-target directory
+pushd "${PREFIX}/targets/${cross_target_name}"
 # Install to conda style directories
 [[ -d lib64 ]] && mv lib64 lib
-
-[[ ${target_platform} == "linux-64" ]] && targetsDir="targets/x86_64-linux"
-[[ ${target_platform} == "linux-ppc64le" ]] && targetsDir="targets/ppc64le-linux"
-[[ ${target_platform} == "linux-aarch64" ]] && targetsDir="targets/sbsa-linux"
-
 for i in `ls`; do
     [[ $i == "build_env_setup.sh" ]] && continue
     [[ $i == "conda_build.sh" ]] && continue
     [[ $i == "metadata_conda_debug.yaml" ]] && continue
     if [[ $i == "bin" ]] || [[ $i == "lib" ]] || [[ $i == "include" ]] || [[ $i == "nvvm" ]]; then
-        # Headers and libraries are installed to targetsDir
-        mkdir -p ${PREFIX}/${targetsDir}
-        mkdir -p ${PREFIX}/$i
-        cp -rv $i ${PREFIX}/${targetsDir}
         if [[ $i == "bin" ]]; then
+            mkdir -p "${PREFIX}/bin"
             # Use a custom nvcc.profile to handle the fact that nvcc is a symlink.
-            cp ${RECIPE_DIR}/nvcc.profile.for_prefix_bin ${PREFIX}/bin/nvcc.profile
-            ln -sv ${PREFIX}/${targetsDir}/bin/nvcc ${PREFIX}/bin/nvcc
-            ln -sv ${PREFIX}/${targetsDir}/bin/crt ${PREFIX}/bin/crt
+            cp "${RECIPE_DIR}/nvcc.profile.for_prefix_bin" "${PREFIX}/bin/nvcc.profile"
+            ln -sv "`pwd`/${i}/nvcc" "${PREFIX}/bin/nvcc"
+            ln -sv "`pwd`/${i}/crt" "${PREFIX}/bin/crt"
         elif [[ $i == "lib" ]]; then
+            mkdir -p "${PREFIX}/lib"
             for j in "$i"/*.a*; do
                 # Static libraries are symlinked in $PREFIX/lib
-                ln -sv ${PREFIX}/${targetsDir}/$j ${PREFIX}/$j
+                ln -sv "`pwd`/${i}/${j}" "${PREFIX}/${j}"
             done
-            ln -sv ${PREFIX}/${targetsDir}/lib ${PREFIX}/${targetsDir}/lib64
+            ln -sv "`pwd`/${i}" lib64
         elif [[ $i == "nvvm" ]]; then
+            mkdir -p "${PREFIX}/nvvm"
             for j in "$i"/*; do
-                ln -sv ${PREFIX}/${targetsDir}/$j ${PREFIX}/$j
+                ln -sv "`pwd`/${i}/${j}" "${PREFIX}/${j}"
             done
         fi
-    else
-        cp -rv $i ${PREFIX}/${targetsDir}
     fi
 done
+popd
 
 # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # This will allow them to be run on environment activation.
