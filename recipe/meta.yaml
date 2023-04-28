@@ -130,8 +130,10 @@ outputs:
     files:
       - targets/{{ ctk_targets[cross_target_platform] }}/bin      # [linux]
       - targets/{{ ctk_targets[cross_target_platform] }}/nvvm     # [linux]
-      - targets/{{ ctk_targets[cross_target_platform] }}/include  # [linux]
-      - targets/{{ ctk_targets[cross_target_platform] }}/lib      # [linux]
+      - targets/{{ ctk_targets[cross_target_platform] }}/include/crt  # [linux]
+      - targets/{{ ctk_targets[cross_target_platform] }}/include/fatbinary_section.h  # [linux]
+      - targets/{{ ctk_targets[cross_target_platform] }}/include/nvPTXCompiler.h  # [linux]
+      - targets/{{ ctk_targets[cross_target_platform] }}/lib/libnvptxcompiler_static.a  # [linux]
       - Library\bin      # [win]
       - Library\nvvm     # [win]
       - Library\include  # [win]
