@@ -92,7 +92,7 @@ outputs:
   - name: placeholder-4
 {% endif %}
 
-{% for cross_target_platform in ctk_targets %}
+{% for cross_target_platform, cross_target_dir in ctk_targets.items() %}
   - name: cuda-nvcc_{{ cross_target_platform }}
     build:
       run_exports:
@@ -114,7 +114,7 @@ outputs:
     about:
       home: https://developer.nvidia.com/cuda-toolkit
       license_file:
-        - {{ PREFIX }}/targets/{{ ctk_targets[cross_target_platform] }}/LICENSE
+        - {{ PREFIX }}/targets/{{ cross_target_dir }}/LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
       summary: Compiler for CUDA applications.
@@ -128,12 +128,12 @@ outputs:
         strong:
           - cuda-version >={{ cuda_version }},<{{ cuda_version.split(".")[0]|int + 1 }}
     files:
-      - targets/{{ ctk_targets[cross_target_platform] }}/bin      # [linux]
-      - targets/{{ ctk_targets[cross_target_platform] }}/nvvm     # [linux]
-      - targets/{{ ctk_targets[cross_target_platform] }}/include/crt  # [linux]
-      - targets/{{ ctk_targets[cross_target_platform] }}/include/fatbinary_section.h  # [linux]
-      - targets/{{ ctk_targets[cross_target_platform] }}/include/nvPTXCompiler.h  # [linux]
-      - targets/{{ ctk_targets[cross_target_platform] }}/lib/libnvptxcompiler_static.a  # [linux]
+      - targets/{{ cross_target_dir }}/bin      # [linux]
+      - targets/{{ cross_target_dir }}/nvvm     # [linux]
+      - targets/{{ cross_target_dir }}/include/crt  # [linux]
+      - targets/{{ cross_target_dir }}/include/fatbinary_section.h  # [linux]
+      - targets/{{ cross_target_dir }}/include/nvPTXCompiler.h  # [linux]
+      - targets/{{ cross_target_dir }}/lib/libnvptxcompiler_static.a  # [linux]
       - Library\bin      # [win]
       - Library\nvvm     # [win]
       - Library\include  # [win]
@@ -157,18 +157,18 @@ outputs:
         - arm-variant * {{ arm_variant_type }}          # [cross_target_platform == "linux-aarch64"]
     test:
       commands:
-        - test -f $PREFIX/targets/{{ ctk_targets[cross_target_platform] }}/bin/nvcc                          # [linux]
-        - test -d $PREFIX/targets/{{ ctk_targets[cross_target_platform] }}/nvvm                              # [linux]
-        - test -f $PREFIX/targets/{{ ctk_targets[cross_target_platform] }}/lib/libnvptxcompiler_static.a     # [linux]
-        - test -f $PREFIX/targets/{{ ctk_targets[cross_target_platform] }}/include/nvPTXCompiler.h           # [linux]
-        - test ! -f $PREFIX/etc/conda/activate.d/~cuda-nvcc_activate.sh               # [linux]
-        - test ! -f $PREFIX/etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh           # [linux]
+        - test -f $PREFIX/targets/{{ cross_target_dir }}/bin/nvcc                       # [linux]
+        - test -d $PREFIX/targets/{{ cross_target_dir }}/nvvm                           # [linux]
+        - test -f $PREFIX/targets/{{ cross_target_dir }}/lib/libnvptxcompiler_static.a  # [linux]
+        - test -f $PREFIX/targets/{{ cross_target_dir }}/include/nvPTXCompiler.h        # [linux]
+        - test ! -f $PREFIX/etc/conda/activate.d/~cuda-nvcc_activate.sh                 # [linux]
+        - test ! -f $PREFIX/etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh             # [linux]
         - if not exist %LIBRARY_LIB%\nvptxcompiler_static.lib exit 1  # [win]
         - if not exist %LIBRARY_INC%\nvPTXCompiler.h exit 1           # [win]
     about:
       home: https://developer.nvidia.com/cuda-toolkit
       license_file:
-        - {{ PREFIX }}/targets/{{ ctk_targets[cross_target_platform] }}/LICENSE
+        - {{ PREFIX }}/targets/{{ cross_target_dir }}/LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
       summary: Compiler for CUDA applications.
