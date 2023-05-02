@@ -145,10 +145,12 @@ outputs:
         - cuda-version {{ cuda_version }}
         - cuda-cudart-dev_{{ cross_target_platform }}
         - cuda-driver-dev_{{ cross_target_platform }}
+        - sysroot_{{ cross_target_platform }} 2.17        # [linux]
       run:
         - {{ pin_compatible("cuda-version", max_pin="x.x") }}
         - cuda-cudart-dev_{{ cross_target_platform }}
         - cuda-driver-dev_{{ cross_target_platform }}
+        - sysroot_{{ cross_target_platform }} 2.17        # [linux]
       run_constrained:
         - gcc_impl_{{ cross_target_platform }} >=6,<13  # [linux]
         - arm-variant * {{ arm_variant_type }}          # [cross_target_platform == "linux-aarch64"]
