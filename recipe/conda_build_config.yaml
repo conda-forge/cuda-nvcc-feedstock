@@ -5,3 +5,6 @@ cxx_compiler_version:      # [linux]
 
 arm_variant_type:          # [aarch64]
   - sbsa                   # [aarch64]
+
+glibc_version:             # [linux]
+  - 2.17                   # [linux]

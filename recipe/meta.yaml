@@ -45,8 +45,8 @@ outputs:
       build:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
-        - arm-variant * {{ arm_variant_type }}        # [aarch64]
-        - sysroot_{{ target_platform }} 2.17          # [linux]
+        - arm-variant * {{ arm_variant_type }}               # [aarch64]
+        - sysroot_{{ target_platform }} {{ glibc_version }}  # [linux]
       run:
         - c-compiler
         - cxx-compiler
@@ -139,18 +139,18 @@ outputs:
       build:
         - {{ c_compiler }}_{{ cross_target_platform }}
         - {{ cxx_compiler }}_{{ cross_target_platform }}
-        - arm-variant * {{ arm_variant_type }}            # [cross_target_platform == "linux-aarch64"]
-        - sysroot_{{ cross_target_platform }} 2.17        # [linux]
+        - arm-variant * {{ arm_variant_type }}                     # [cross_target_platform == "linux-aarch64"]
+        - sysroot_{{ cross_target_platform }} {{ glibc_version }}  # [linux]
       host:
         - cuda-version {{ cuda_version }}
         - cuda-cudart-dev_{{ cross_target_platform }}
         - cuda-driver-dev_{{ cross_target_platform }}
-        - sysroot_{{ cross_target_platform }} 2.17        # [linux]
+        - sysroot_{{ cross_target_platform }} {{ glibc_version }}  # [linux]
       run:
         - {{ pin_compatible("cuda-version", max_pin="x.x") }}
         - cuda-cudart-dev_{{ cross_target_platform }}
         - cuda-driver-dev_{{ cross_target_platform }}
-        - sysroot_{{ cross_target_platform }} 2.17        # [linux]
+        - sysroot_{{ cross_target_platform }} {{ glibc_version }}  # [linux]
       run_constrained:
         - gcc_impl_{{ cross_target_platform }} >=6,<13  # [linux]
         - arm-variant * {{ arm_variant_type }}          # [cross_target_platform == "linux-aarch64"]
