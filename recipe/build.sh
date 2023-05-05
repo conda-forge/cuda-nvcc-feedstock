@@ -15,22 +15,28 @@ for i in `ls`; do
         # Headers and libraries are installed to targetsDir
         mkdir -p ${PREFIX}/${targetsDir}
         mkdir -p ${PREFIX}/$i
-        cp -rv $i ${PREFIX}/${targetsDir}
         if [[ $i == "bin" ]]; then
+            mkdir -p ${PREFIX}/${targetsDir}/bin
+            mv -v $i/nvcc ${PREFIX}/${targetsDir}/bin
+            cp -rv $i ${PREFIX}
             # Use a custom nvcc.profile to handle the fact that nvcc is a symlink.
-            cp ${RECIPE_DIR}/nvcc.profile.for_prefix_bin ${PREFIX}/bin/nvcc.profile
+            # cp ${RECIPE_DIR}/nvcc.profile.for_prefix_bin ${PREFIX}/bin/nvcc.profile
             ln -sv ${PREFIX}/${targetsDir}/bin/nvcc ${PREFIX}/bin/nvcc
-            ln -sv ${PREFIX}/${targetsDir}/bin/crt ${PREFIX}/bin/crt
         elif [[ $i == "lib" ]]; then
+            cp -rv $i ${PREFIX}/${targetsDir}
             for j in "$i"/*.a*; do
                 # Static libraries are symlinked in $PREFIX/lib
                 ln -sv ${PREFIX}/${targetsDir}/$j ${PREFIX}/$j
             done
             ln -sv ${PREFIX}/${targetsDir}/lib ${PREFIX}/${targetsDir}/lib64
-        elif [[ $i == "nvvm" ]]; then
+        elif [[ $i == "include" ]]; then
+            cp -rv $i ${PREFIX}/${targetsDir}
             for j in "$i"/*; do
+                # Headers are symlinked in $PREFIX/include
                 ln -sv ${PREFIX}/${targetsDir}/$j ${PREFIX}/$j
             done
+        elif [[ $i == "nvvm" ]]; then
+            cp -rv $i ${PREFIX}
         fi
     else
         cp -rv $i ${PREFIX}/${targetsDir}
