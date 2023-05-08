@@ -20,7 +20,7 @@ for i in `ls`; do
             mv -v $i/nvcc ${PREFIX}/${targetsDir}/bin
             cp -rv $i ${PREFIX}
             # Use a custom nvcc.profile to handle the fact that nvcc is a symlink.
-            # cp ${RECIPE_DIR}/nvcc.profile.for_prefix_bin ${PREFIX}/bin/nvcc.profile
+            cp ${RECIPE_DIR}/nvcc.profile.for_prefix_bin ${PREFIX}/bin/nvcc.profile
             ln -sv ${PREFIX}/${targetsDir}/bin/nvcc ${PREFIX}/bin/nvcc
         elif [[ $i == "lib" ]]; then
             cp -rv $i ${PREFIX}/${targetsDir}
@@ -37,6 +37,7 @@ for i in `ls`; do
             done
         elif [[ $i == "nvvm" ]]; then
             cp -rv $i ${PREFIX}
+            ln -sv ${PREFIX}/nvvm ${PREFIX}/${targetsDir}/nvvm
         fi
     else
         cp -rv $i ${PREFIX}/${targetsDir}

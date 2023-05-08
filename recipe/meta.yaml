@@ -34,6 +34,7 @@ outputs:
   - name: cuda-nvcc
     files:
       - targets/{{ target_name }}/bin/nvcc  # [linux]
+      - targets/{{ target_name }}/nvvm      # [linux]
       - bin                                 # [linux]
       - lib/libnvptxcompiler_static.a       # [linux]
       - nvvm                                # [linux]
