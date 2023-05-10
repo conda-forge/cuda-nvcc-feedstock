@@ -62,7 +62,7 @@ outputs:
         - {{ compiler("cxx") }}
         - cmake
         - cuda-driver-dev
-        - git # [linux]
+        - git  # [linux]
         - ninja
       files:
         - test.cu
