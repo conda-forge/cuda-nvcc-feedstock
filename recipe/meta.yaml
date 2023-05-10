@@ -61,14 +61,18 @@ outputs:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
         - cmake
+        - cuda-driver-dev
+        - git # [linux]
         - ninja
       files:
         - test.cu
         - CMakeLists.txt
+        - run_cmake_cuda_tests.sh # [linux]
       commands:
         - nvcc --version
         - nvcc --verbose test.cu
         - cmake -S . -B ./build -G=Ninja && cmake --build ./build -v
+        - bash ./run_cmake_cuda_tests.sh # [linux]
     about:
       home: https://developer.nvidia.com/cuda-toolkit
       license_file: LICENSE
