@@ -6,6 +6,11 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 
+source:
+  # Using this license for consistent messaging with the components it relies on
+  url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/LICENSE.txt
+  sha256: 5db25d4fd138013b563f9a3d1d87f7de7df1dac014fd4cccdfbb3435a5cff761
+
 build:
   number: 3
   skip: true  # [osx or win]
@@ -26,7 +31,7 @@ outputs:
         - if not exist %LIBRARY_BIN%\nvcc.exe exit 1        # [win]
     about:
       home: https://developer.nvidia.com/cuda-toolkit
-      license_file: LICENSE
+      license_file: LICENSE.txt
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
       summary: Compiler for CUDA applications.
@@ -68,7 +73,7 @@ outputs:
         - test -f $PREFIX/etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh  # [linux]
     about:
       home: https://developer.nvidia.com/cuda-toolkit
-      license_file: LICENSE
+      license_file: LICENSE.txt
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
       summary: Compiler for CUDA applications.
@@ -78,7 +83,7 @@ outputs:
 
 about:
   home: https://developer.nvidia.com/cuda-toolkit
-  license_file: LICENSE
+  license_file: LICENSE.txt
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_url: https://docs.nvidia.com/cuda/eula/index.html
   summary: Compiler for CUDA applications.
