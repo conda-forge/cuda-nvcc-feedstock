@@ -18,6 +18,9 @@ outputs:
       run:
         - cuda-nvcc_{{ target_platform }} {{ version }}.*
     test:
+      requires:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
       commands:
         - test -f $PREFIX/bin/nvcc                          # [linux]
         - if not exist %LIBRARY_BIN%\nvcc.exe exit 1        # [win]
