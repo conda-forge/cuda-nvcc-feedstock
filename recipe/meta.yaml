@@ -68,7 +68,8 @@ outputs:
       commands:
         - nvcc --version
         - nvcc --verbose test.cu
-        - cmake ${CMAKE_ARGS} -S . -B ./build -G=Ninja && cmake --build ./build -v
+        - cmake ${CMAKE_ARGS} -S . -B ./build -G=Ninja
+        - cmake --build ./build -v
         - bash ./run_cmake_cuda_tests.sh  # [linux]
         - test -f $PREFIX/etc/conda/activate.d/~cuda-nvcc_activate.sh      # [linux]
         - test -f $PREFIX/etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh  # [linux]
