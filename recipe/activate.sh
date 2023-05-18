@@ -15,6 +15,8 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
         exit 1
     fi
     CUDA_INCLUDE_DIR="${PREFIX}/${targetsDir}/include"
+    # Needed to fix cross compilation
+    export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;$BUILD_PREFIX/$HOST/sysroot;$BUILD_PREFIX/${targetsDir}"
 else
     CUDA_INCLUDE_DIR="${CONDA_PREFIX}/${targetsDir}/include"
 fi
