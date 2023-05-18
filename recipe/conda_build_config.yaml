@@ -8,9 +8,9 @@ cross_target_platform:
   - linux-64
   - linux-ppc64le
   - linux-aarch64
-sysroot_linux-64:
+sysroot_linux_64:
   - 2.17
-sysroot_linux-ppc64le:
+sysroot_linux_ppc64le:
   - 2.17
-sysroot_linux-aarch64:
+sysroot_linux_aarch64:
   - 2.17
