@@ -26,4 +26,7 @@ cd cmake-tests/build
 #   *Toolkit*
 # Failing due to undefined symbol: __libc_dl_error_tsd, version GLIBC_PRIVATE
 #   Cuda.Complex
-CUDAHOSTCXX=$CXX ctest -L CUDA --output-on-failure -j $(nproc) -E "(ProperDeviceLibraries|SharedRuntime|ObjectLibrary|WithC|ArchSpecial|GPUDebugFlag|SeparateCompilationPTX|WithDefs|CUDA_architectures|Toolkit|Cuda.Complex)"
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "0" ]]
+then
+    CUDAHOSTCXX=$CXX ctest -L CUDA --output-on-failure -j $(nproc) -E "(ProperDeviceLibraries|SharedRuntime|ObjectLibrary|WithC|ArchSpecial|GPUDebugFlag|SeparateCompilationPTX|WithDefs|CUDA_architectures|Toolkit|Cuda.Complex)"
+fi
