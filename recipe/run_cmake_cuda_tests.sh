@@ -28,5 +28,9 @@ cd cmake-tests/build
 #   Cuda.Complex
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "0" ]]
 then
-    CUDAHOSTCXX=$CXX ctest -L CUDA --output-on-failure -j $(nproc) -E "(ProperDeviceLibraries|SharedRuntime|ObjectLibrary|WithC|ArchSpecial|GPUDebugFlag|SeparateCompilationPTX|WithDefs|CUDA_architectures|Toolkit|Cuda.Complex)"
+    EXTRA_EXCLUDE=
+    if [ "${target_platform}" == "linux-ppc64le" ]; then
+      EXTRA_EXCLUDE="|CudaOnly.DontResolveDeviceSymbols"
+    fi
+    CUDAHOSTCXX=$CXX ctest -L CUDA --output-on-failure -j $(nproc) -E "(ProperDeviceLibraries|SharedRuntime|ObjectLibrary|WithC|ArchSpecial|GPUDebugFlag|SeparateCompilationPTX|WithDefs|CUDA_architectures|Toolkit|Cuda.Complex$EXTRA_EXCLUDE)"
 fi
