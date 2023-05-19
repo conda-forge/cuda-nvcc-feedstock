@@ -1,20 +1,5 @@
 #!/bin/bash
 
-if [[ ! -z "${CFLAGS+x}" ]]
-then
-  export CFLAGS_CUDA_NVCC_BACKUP="${CFLAGS}"
-fi
-
-if [[ ! -z "${CPPFLAGS+x}" ]]
-then
-  export CPPFLAGS_CUDA_NVCC_BACKUP="${CPPFLAGS}"
-fi
-
-if [[ ! -z "${CXXFLAGS+x}" ]]
-then
-  export CXXFLAGS_CUDA_NVCC_BACKUP="${CXXFLAGS}"
-fi
-
 [[ "@cross_target_platform@" == "linux-64" ]] && targetsDir="targets/x86_64-linux"
 [[ "@cross_target_platform@" == "linux-ppc64le" ]] && targetsDir="targets/ppc64le-linux"
 [[ "@cross_target_platform@" == "linux-aarch64" ]] && targetsDir="targets/sbsa-linux"
