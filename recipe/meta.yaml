@@ -14,7 +14,7 @@ source:
 build:
   number: 3
   skip: true  # [osx or win]
-  skip: true  # [build_platform != "linux-64" and build_platform != target_platform]
+  skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
 outputs:
   - name: cuda-nvcc
