@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export CFLAGS_BACKUP="${CFLAGS}"
-export CPPFLAGS_BACKUP="${CPPFLAGS}"
-export CXXFLAGS_BACKUP="${CXXFLAGS}"
+export CFLAGS_CUDA_NVCC_BACKUP="${CFLAGS}"
+export CPPFLAGS_CUDA_NVCC_BACKUP="${CPPFLAGS}"
+export CXXFLAGS_CUDA_NVCC_BACKUP="${CXXFLAGS}"
 export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
 
 [[ "@cross_target_platform@" == "linux-64" ]] && targetsDir="targets/x86_64-linux"
