@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ERROR=false
+
 [[ "@cross_target_platform@" == "linux-64" ]] && targetsDir="targets/x86_64-linux"
 [[ "@cross_target_platform@" == "linux-ppc64le" ]] && targetsDir="targets/ppc64le-linux"
 [[ "@cross_target_platform@" == "linux-aarch64" ]] && targetsDir="targets/sbsa-linux"
@@ -20,7 +22,7 @@ export CPPFLAGS="${CPPFLAGS} -I${CUDA_INCLUDE_DIR}"
 export CXXFLAGS="${CXXFLAGS} -I${CUDA_INCLUDE_DIR}"
 if [ -z "${CXX+x}" ]; then
     echo 'cuda-nvcc: Please add the `compiler("c")` and `compiler("cxx")` packages to the environment.'
-    false
+    ERROR=true
 else
     if [[ ! -z "${NVCC_PREPEND_FLAGS+x}" ]]
     then
@@ -28,3 +30,6 @@ else
     fi
     export NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX}"
 fi
+
+# Exit with unclean status if there was an error
+! $ERROR
