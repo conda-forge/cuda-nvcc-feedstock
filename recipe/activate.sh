@@ -15,7 +15,7 @@ then
   export CXXFLAGS_CUDA_NVCC_BACKUP="${CXXFLAGS}"
 fi
 
-if [[ ! -z "${NVCC_PREPEND_FLAGS +x}" ]]
+if [[ ! -z "${NVCC_PREPEND_FLAGS+x}" ]]
 then
   export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
 fi
