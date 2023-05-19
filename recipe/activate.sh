@@ -1,9 +1,24 @@
 #!/bin/bash
 
-export CFLAGS_CUDA_NVCC_BACKUP="${CFLAGS}"
-export CPPFLAGS_CUDA_NVCC_BACKUP="${CPPFLAGS}"
-export CXXFLAGS_CUDA_NVCC_BACKUP="${CXXFLAGS}"
-export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
+if [[ ! -z "${CFLAGS+x}" ]]
+then
+  export CFLAGS_CUDA_NVCC_BACKUP="${CFLAGS}"
+fi
+
+if [[ ! -z "${CPPFLAGS+x}" ]]
+then
+  export CPPFLAGS_CUDA_NVCC_BACKUP="${CPPFLAGS}"
+fi
+
+if [[ ! -z "${CXXFLAGS+x}" ]]
+then
+  export CXXFLAGS_CUDA_NVCC_BACKUP="${CXXFLAGS}"
+fi
+
+if [[ ! -z "${NVCC_PREPEND_FLAGS +x}" ]]
+then
+  export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
+fi
 
 [[ "@cross_target_platform@" == "linux-64" ]] && targetsDir="targets/x86_64-linux"
 [[ "@cross_target_platform@" == "linux-ppc64le" ]] && targetsDir="targets/ppc64le-linux"
