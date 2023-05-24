@@ -3,11 +3,53 @@ About cuda-nvcc-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cuda-nvcc-feedstock/blob/main/LICENSE.txt)
 
+About cuda-nvcc
+---------------
+
 Home: https://developer.nvidia.com/cuda-toolkit
 
 Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
 
 Summary: Compiler for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+About cuda-nvcc_linux-64
+------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+About cuda-nvcc_linux-ppc64le
+-----------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+About cuda-nvcc_linux-aarch64
+-----------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
 
 Documentation: https://docs.nvidia.com/cuda/index.html
 
@@ -39,24 +81,38 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_cross_target_platformlinux-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64</td>
+              <td>linux_64_cross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le</td>
+              <td>linux_64_cross_target_platformlinux-ppc64le</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-ppc64le" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_cross_target_platformlinux-aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-aarch64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_cross_target_platformlinux-ppc64le</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-ppc64le" alt="variant">
                 </a>
               </td>
             </tr>
@@ -73,8 +129,9 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc.svg)](https://anaconda.org/conda-forge/cuda-nvcc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc.svg)](https://anaconda.org/conda-forge/cuda-nvcc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc.svg)](https://anaconda.org/conda-forge/cuda-nvcc) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc--impl_linux--64-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc-impl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc-impl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc-impl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc-impl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc-impl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc-impl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc-impl_linux-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc_linux--64-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc_linux-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc_linux-aarch64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc_linux-aarch64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc_linux-aarch64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-aarch64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc_linux-ppc64le.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc_linux-ppc64le.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc_linux-ppc64le.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-ppc64le) |
 
 Installing cuda-nvcc
 ====================
@@ -86,16 +143,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cuda-nvcc, cuda-nvcc-impl_linux-64, cuda-nvcc_linux-64` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `cuda-nvcc, cuda-nvcc_linux-64, cuda-nvcc_linux-aarch64, cuda-nvcc_linux-ppc64le` can be installed with `conda`:
 
 ```
-conda install cuda-nvcc cuda-nvcc-impl_linux-64 cuda-nvcc_linux-64
+conda install cuda-nvcc cuda-nvcc_linux-64 cuda-nvcc_linux-aarch64 cuda-nvcc_linux-ppc64le
 ```
 
 or with `mamba`:
 
 ```
-mamba install cuda-nvcc cuda-nvcc-impl_linux-64 cuda-nvcc_linux-64
+mamba install cuda-nvcc cuda-nvcc_linux-64 cuda-nvcc_linux-aarch64 cuda-nvcc_linux-ppc64le
 ```
 
 It is possible to list all of the versions of `cuda-nvcc` available on your platform with `conda`:
