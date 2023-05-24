@@ -81,7 +81,7 @@ outputs:
       license_file: LICENSE.txt
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
-      summary: Compiler for CUDA applications.
+      summary: Compiler activation scripts for CUDA applications.
       description: |
         Compiler for CUDA applications.
       doc_url: https://docs.nvidia.com/cuda/index.html
