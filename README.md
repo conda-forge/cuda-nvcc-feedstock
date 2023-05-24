@@ -3,11 +3,53 @@ About cuda-nvcc-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cuda-nvcc-feedstock/blob/main/LICENSE.txt)
 
+About cuda-nvcc
+---------------
+
 Home: https://developer.nvidia.com/cuda-toolkit
 
 Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
 
 Summary: Compiler for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+About cuda-nvcc_linux-64
+------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+About cuda-nvcc_linux-ppc64le
+-----------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+About cuda-nvcc_linux-aarch64
+-----------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
 
 Documentation: https://docs.nvidia.com/cuda/index.html
 
