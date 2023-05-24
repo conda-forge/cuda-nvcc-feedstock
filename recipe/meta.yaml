@@ -56,6 +56,7 @@ outputs:
         - cuda-driver-dev_{{ cross_target_platform }} {{ cuda_version }}.*
         - cuda-nvcc-tools {{ version }}.*
         - cuda-nvcc-impl {{ version }}.*   # [target_platform == cross_target_platform]
+        - {{ pin_compatible("sysroot_" ~ cross_target_platform, max_pin="x.x") }}
     test:
       requires:
         - {{ c_compiler }}_{{ cross_target_platform }} {{ c_compiler_version }}.*
