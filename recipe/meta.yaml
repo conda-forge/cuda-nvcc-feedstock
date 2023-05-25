@@ -65,11 +65,13 @@ outputs:
         - ninja
         - git    # [linux]
       files:
+        - test.cpp
         - test.cu
         - CMakeLists.txt
         - run_cmake_cuda_tests.sh  # [linux]
       commands:
         - nvcc --version
+        - nvcc --verbose test.cpp
         - nvcc --verbose test.cu
         - cmake ${CMAKE_ARGS} -S . -B ./build -G=Ninja
         - cmake --build ./build -v
