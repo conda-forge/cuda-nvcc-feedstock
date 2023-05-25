@@ -70,6 +70,7 @@ outputs:
         - CMakeLists.txt
         - run_cmake_cuda_tests.sh  # [linux]
       commands:
+        - env
         - nvcc --version
         - $CXX --verbose ${CXXFLAGS} -lcuda test.cpp
         - nvcc --verbose test.cu
