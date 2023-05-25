@@ -10,10 +10,12 @@ CUDA_FLAGS=""
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
     CUDA_FLAGS="${CUDA_FLAGS} -I${PREFIX}/${targetsDir}/include"
     CUDA_FLAGS="${CUDA_FLAGS} -I${BUILD_PREFIX}/${targetsDir}/include"
+    CUDA_FLAGS="${CUDA_FLAGS} -L${BUILD_PREFIX}/lib/stubs"
     # Needed to fix cross compilation
     export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;$BUILD_PREFIX/$HOST/sysroot;$BUILD_PREFIX/${targetsDir}"
 else
     CUDA_FLAGS="${CUDA_FLAGS} -I${CONDA_PREFIX}/${targetsDir}/include"
+    CUDA_FLAGS="${CUDA_FLAGS} -L${CONDA_PREFIX}/lib/stubs"
 fi
 
 export CFLAGS="${CFLAGS} ${CUDA_FLAGS}"
