@@ -16,9 +16,6 @@ else
     CUDA_FLAGS="${CUDA_FLAGS} -I${CONDA_PREFIX}/${targetsDir}/include"
 fi
 
-# (Leo checking if this is needed): Avoid GCC warnings due to using headers from `BUILD_PREFIX`
-# ln -s "${BUILD_PREFIX}/${targetsDir}/include/crt" "${CUDA_INCLUDE_DIR}"
-
 export CFLAGS="${CFLAGS} ${CUDA_FLAGS}"
 export CPPFLAGS="${CPPFLAGS} ${CUDA_FLAGS}"
 export CXXFLAGS="${CXXFLAGS} ${CUDA_FLAGS}"
