@@ -6,21 +6,23 @@ ERROR=false
 [[ "@cross_target_platform@" == "linux-ppc64le" ]] && targetsDir="targets/ppc64le-linux"
 [[ "@cross_target_platform@" == "linux-aarch64" ]] && targetsDir="targets/sbsa-linux"
 
-CUDA_FLAGS=""
+CUDA_CFLAGS=""
+CUDA_LDFLAGS=""
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-    CUDA_FLAGS="${CUDA_FLAGS} -I${PREFIX}/${targetsDir}/include"
-    CUDA_FLAGS="${CUDA_FLAGS} -I${BUILD_PREFIX}/${targetsDir}/include"
-    CUDA_FLAGS="${CUDA_FLAGS} -L${BUILD_PREFIX}/${targetsDir}/lib/stubs"
+    CUDA_CFLAGS="${CUDA_CFLAGS} -I${PREFIX}/${targetsDir}/include"
+    CUDA_CFLAGS="${CUDA_CFLAGS} -I${BUILD_PREFIX}/${targetsDir}/include"
+    CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${BUILD_PREFIX}/${targetsDir}/lib/stubs"
     # Needed to fix cross compilation
     export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;$BUILD_PREFIX/$HOST/sysroot;$BUILD_PREFIX/${targetsDir}"
 else
-    CUDA_FLAGS="${CUDA_FLAGS} -I${CONDA_PREFIX}/${targetsDir}/include"
-    CUDA_FLAGS="${CUDA_FLAGS} -L${CONDA_PREFIX}/${targetsDir}/lib/stubs"
+    CUDA_CFLAGS="${CUDA_CFLAGS} -I${CONDA_PREFIX}/${targetsDir}/include"
+    CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${CONDA_PREFIX}/${targetsDir}/lib/stubs"
 fi
 
-export CFLAGS="${CFLAGS} ${CUDA_FLAGS}"
-export CPPFLAGS="${CPPFLAGS} ${CUDA_FLAGS}"
-export CXXFLAGS="${CXXFLAGS} ${CUDA_FLAGS}"
+export CFLAGS="${CFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
+export CPPFLAGS="${CPPFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
+export CXXFLAGS="${CXXFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
+export LDFLAGS="${LDFLAGS} ${CUDA_LDFLAGS}"
 if [ -z "${CXX+x}" ]; then
     echo 'cuda-nvcc: Please add the `compiler("c")` and `compiler("cxx")` packages to the environment.'
     ERROR=true
