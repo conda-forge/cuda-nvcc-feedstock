@@ -6,20 +6,24 @@ ERROR=false
 [[ "@cross_target_platform@" == "linux-ppc64le" ]] && targetsDir="targets/ppc64le-linux"
 [[ "@cross_target_platform@" == "linux-aarch64" ]] && targetsDir="targets/sbsa-linux"
 
+CUDA_CFLAGS=""
+CUDA_LDFLAGS=""
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-    CUDA_INCLUDE_DIR="${PREFIX}/${targetsDir}/include"
+    CUDA_CFLAGS="${CUDA_CFLAGS} -I${PREFIX}/${targetsDir}/include"
+    CUDA_CFLAGS="${CUDA_CFLAGS} -I${BUILD_PREFIX}/${targetsDir}/include"
+    CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${PREFIX}/${targetsDir}/lib/stubs"
+    CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${BUILD_PREFIX}/${targetsDir}/lib/stubs"
     # Needed to fix cross compilation
     export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;$BUILD_PREFIX/$HOST/sysroot;$BUILD_PREFIX/${targetsDir}"
 else
-    CUDA_INCLUDE_DIR="${CONDA_PREFIX}/${targetsDir}/include"
+    CUDA_CFLAGS="${CUDA_CFLAGS} -I${CONDA_PREFIX}/${targetsDir}/include"
+    CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${CONDA_PREFIX}/${targetsDir}/lib/stubs"
 fi
 
-# (Leo checking if this is needed): Avoid GCC warnings due to using headers from `BUILD_PREFIX`
-# ln -s "${BUILD_PREFIX}/${targetsDir}/include/crt" "${CUDA_INCLUDE_DIR}"
-
-export CFLAGS="${CFLAGS} -I${CUDA_INCLUDE_DIR}"
-export CPPFLAGS="${CPPFLAGS} -I${CUDA_INCLUDE_DIR}"
-export CXXFLAGS="${CXXFLAGS} -I${CUDA_INCLUDE_DIR}"
+export CFLAGS="${CFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
+export CPPFLAGS="${CPPFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
+export CXXFLAGS="${CXXFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
+export LDFLAGS="${LDFLAGS} ${CUDA_LDFLAGS}"
 if [ -z "${CXX+x}" ]; then
     echo 'cuda-nvcc: Please add the `compiler("c")` and `compiler("cxx")` packages to the environment.'
     ERROR=true
