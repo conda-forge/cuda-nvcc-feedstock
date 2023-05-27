@@ -71,7 +71,7 @@ outputs:
         - run_cmake_cuda_tests.sh  # [linux]
       commands:
         - nvcc --version
-        - $CXX --verbose ${CXXFLAGS} -lcuda test.cpp
+        - $CXX --verbose ${CXXFLAGS} -lcuda -lcudart_static test.cpp
         - nvcc --verbose test.cu
         - cmake ${CMAKE_ARGS} -S . -B ./build -G=Ninja
         - cmake --build ./build -v
