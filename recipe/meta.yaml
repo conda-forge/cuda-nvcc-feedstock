@@ -12,7 +12,7 @@ source:
   sha256: 5db25d4fd138013b563f9a3d1d87f7de7df1dac014fd4cccdfbb3435a5cff761
 
 build:
-  number: 4
+  number: 5
   skip: true  # [osx or win]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
@@ -71,7 +71,7 @@ outputs:
         - run_cmake_cuda_tests.sh  # [linux]
       commands:
         - nvcc --version
-        - $CXX --verbose ${CXXFLAGS} -lcuda test.cpp
+        - $CXX --verbose ${CXXFLAGS} -lcuda -lcudart_static test.cpp
         - nvcc --verbose test.cu
         - cmake ${CMAKE_ARGS} -S . -B ./build -G=Ninja
         - cmake --build ./build -v
