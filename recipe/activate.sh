@@ -27,6 +27,7 @@ export CFLAGS="${CFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
 export CPPFLAGS="${CPPFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
 export CXXFLAGS="${CXXFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
 export LDFLAGS="${LDFLAGS} ${CUDA_LDFLAGS}"
+export CUDAFLAGS="${CUDAFLAGS} ${CUDA_CFLAGS}"
 if [ -z "${CXX+x}" ]; then
     echo 'cuda-nvcc: Please add the `compiler("c")` and `compiler("cxx")` packages to the environment.'
     ERROR=true
