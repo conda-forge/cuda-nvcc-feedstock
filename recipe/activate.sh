@@ -25,19 +25,13 @@ fi
 
 # For conda-build we add the host requirements prefix to the include and link
 # paths for nvcc because it is separate from the build prefix where nvcc is
-# installed. These environment variables are picked up by the nvcc.profile from
-# the cuda-nvcc-impl-feedstock
+# installed.
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
 
-    CB_CUDA_INCL_DIRS=""
-    CB_CUDA_LINK_DIRS=""
-
-    CB_CUDA_INCL_DIRS="${CB_CUDA_INCL_DIRS} -I${PREFIX}/${targetsDir}/include"
-    CB_CUDA_LINK_DIRS="${CB_CUDA_LINK_DIRS} -L${PREFIX}/${targetsDir}/lib"
-    CB_CUDA_LINK_DIRS="${CB_CUDA_LINK_DIRS} -L${PREFIX}/${targetsDir}/lib/stubs"
-
-    export CB_CUDA_INCL_DIRS
-    export CB_CUDA_LINK_DIRS
+    NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -I${PREFIX}/${targetsDir}/include"
+    NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib"
+    NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib/stubs"
+    export NVCC_PREPEND_FLAGS
 fi
 
 export CFLAGS="${CFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
