@@ -23,11 +23,27 @@ else
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${CONDA_PREFIX}/${targetsDir}/lib/stubs"
 fi
 
-export CFLAGS="${CFLAGS} ${CUDA_CFLAGS}"
-export CPPFLAGS="${CPPFLAGS} ${CUDA_CFLAGS}"
-export CXXFLAGS="${CXXFLAGS} ${CUDA_CFLAGS}"
+# For conda-build we add the host requirements prefix to the include and link
+# paths for nvcc because it is separate from the build prefix where nvcc is
+# installed. These environment variables are picked up by the nvcc.profile from
+# the cuda-nvcc-impl-feedstock
+if [ "${CONDA_BUILD:-0}" = "1" ]; then
+
+    CB_CUDA_INCL_DIRS=""
+    CB_CUDA_LINK_DIRS=""
+
+    CB_CUDA_INCL_DIRS="${CB_CUDA_INCL_DIRS} -I${PREFIX}/${targetsDir}/include"
+    CB_CUDA_LINK_DIRS="${CB_CUDA_LINK_DIRS} -L${PREFIX}/${targetsDir}/lib"
+    CB_CUDA_LINK_DIRS="${CB_CUDA_LINK_DIRS} -L${PREFIX}/${targetsDir}/lib/stubs"
+
+    export CB_CUDA_INCL_DIRS
+    export CB_CUDA_LINK_DIRS
+fi
+
+export CFLAGS="${CFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
+export CPPFLAGS="${CPPFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
+export CXXFLAGS="${CXXFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
 export LDFLAGS="${LDFLAGS} ${CUDA_LDFLAGS}"
-export CUDAFLAGS="${CUDAFLAGS} ${CUDA_CFLAGS}"
 if [ -z "${CXX+x}" ]; then
     echo 'cuda-nvcc: Please add the `compiler("c")` and `compiler("cxx")` packages to the environment.'
     ERROR=true
