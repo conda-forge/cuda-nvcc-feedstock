@@ -35,6 +35,7 @@ else
     then
         export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
     fi
+    NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX}"
     # For conda-build we add the host requirements prefix to the include- and
     # link-paths for nvcc because it is separate from the build prefix where
     # nvcc is installed.
@@ -43,7 +44,7 @@ else
         NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib"
         NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib/stubs"
     fi
-    export NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX}"
+    export NVCC_PREPEND_FLAGS
 fi
 
 # Exit with unclean status if there was an error
