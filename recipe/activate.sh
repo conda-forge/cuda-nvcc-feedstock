@@ -22,11 +22,11 @@ else
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${CONDA_PREFIX}/${targetsDir}/lib"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${CONDA_PREFIX}/${targetsDir}/lib/stubs"
 fi
-
 export CFLAGS="${CFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
 export CPPFLAGS="${CPPFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
 export CXXFLAGS="${CXXFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
 export LDFLAGS="${LDFLAGS} ${CUDA_LDFLAGS}"
+
 if [ -z "${CXX+x}" ]; then
     echo 'cuda-nvcc: Please add the `compiler("c")` and `compiler("cxx")` packages to the environment.'
     ERROR=true
@@ -35,7 +35,16 @@ else
     then
         export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
     fi
-    export NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX}"
+    NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX}"
+    # For conda-build we add the host requirements prefix to the include- and
+    # link-paths for nvcc because it is separate from the build prefix where
+    # nvcc is installed.
+    if [ "${CONDA_BUILD:-0}" = "1" ]; then
+        NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -I${PREFIX}/${targetsDir}/include"
+        NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib"
+        NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib/stubs"
+    fi
+    export NVCC_PREPEND_FLAGS
 fi
 
 # Exit with unclean status if there was an error
