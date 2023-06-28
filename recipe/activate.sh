@@ -36,15 +36,24 @@ else
         export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
     fi
     NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX}"
+    export NVCC_PREPEND_FLAGS
+
+    if [[ ! -z "${NVCC_APPEND_FLAGS+x}" ]]
+    then
+        export NVCC_APPEND_FLAGS_BACKUP="${NVCC_APPEND_FLAGS}"
+    fi
     # For conda-build we add the host requirements prefix to the include- and
     # link-paths for nvcc because it is separate from the build prefix where
-    # nvcc is installed.
+    # nvcc is installed. We do this using `NVCC_APPEND_FLAGS` so that it
+    # goes last on the compiler/link line. This ensures that these flags
+    # match the behavior of the other implicit flags of the compiler, allowing
+    # for user overrides.
     if [ "${CONDA_BUILD:-0}" = "1" ]; then
-        NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -I${PREFIX}/${targetsDir}/include"
-        NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib"
-        NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib/stubs"
+        NVCC_APPEND_FLAGS="${NVCC_APPEND_FLAGS} -I${PREFIX}/${targetsDir}/include"
+        NVCC_APPEND_FLAGS="${NVCC_APPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib"
+        NVCC_APPEND_FLAGS="${NVCC_APPEND_FLAGS} -L${PREFIX}/${targetsDir}/lib/stubs"
     fi
-    export NVCC_PREPEND_FLAGS
+    export NVCC_APPEND_FLAGS
 fi
 
 # Exit with unclean status if there was an error
