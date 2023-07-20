@@ -15,7 +15,10 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${PREFIX}/${targetsDir}/lib/stubs"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${BUILD_PREFIX}/${targetsDir}/lib"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${BUILD_PREFIX}/${targetsDir}/lib/stubs"
-    # Needed to fix cross compilation
+    # Needed to fix cross compilation.
+    # $PREFIX and $PREFIX/${targetsDir} are needed to properly find all host components
+    # $BUILD_PREFIX/$HOST/sysroot is needed to find compiler bits and is placed before any `targetsDir` for priority.
+    # $BUILD_PREFIX/${targetsDir} is needed for projects that don't enable the CUDA language but use FindCUDAToolkit
     export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;$BUILD_PREFIX/$HOST/sysroot;$PREFIX/${targetsDir};$BUILD_PREFIX/${targetsDir}"
 else
     CUDA_CFLAGS="${CUDA_CFLAGS} -I${CONDA_PREFIX}/${targetsDir}/include"
