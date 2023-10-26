@@ -18,8 +18,8 @@ Documentation: https://docs.nvidia.com/cuda/index.html
 Compiler for CUDA applications.
 
 
-About cuda-nvcc_linux-aarch64
------------------------------
+About cuda-nvcc_linux-64
+------------------------
 
 Home: https://developer.nvidia.com/cuda-toolkit
 
@@ -32,8 +32,8 @@ Documentation: https://docs.nvidia.com/cuda/index.html
 Compiler for CUDA applications.
 
 
-About cuda-nvcc_linux-64
-------------------------
+About cuda-nvcc_linux-aarch64
+-----------------------------
 
 Home: https://developer.nvidia.com/cuda-toolkit
 
@@ -120,13 +120,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformwin-64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformwin-64" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_aarch64_cross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
@@ -141,10 +134,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_cross_target_platformwin-64</td>
+              <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cross_target_platformwin-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
