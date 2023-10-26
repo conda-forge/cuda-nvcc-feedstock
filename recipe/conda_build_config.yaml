@@ -8,3 +8,4 @@ cross_target_platform:
   - linux-64
   - linux-ppc64le
   - linux-aarch64
+  - win-64

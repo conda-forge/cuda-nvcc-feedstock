@@ -13,7 +13,7 @@ source:
 
 build:
   number: 10
-  skip: true  # [osx or win]
+  skip: true  # [osx]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
 outputs:
@@ -43,7 +43,7 @@ outputs:
     run_exports:
       strong:
         - cuda-version >={{ cuda_version }},<{{ cuda_version.split(".")[0]|int + 1 }}
-    files:
+    files:                                               # [linux]
       - etc/conda/activate.d/~cuda-nvcc_activate.sh      # [linux]
       - etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh  # [linux]
     requirements:
@@ -52,14 +52,16 @@ outputs:
       run:
         - cuda-nvcc-dev_{{ cross_target_platform }} {{ version }}.*
         - cuda-cudart-dev_{{ cross_target_platform }} {{ cuda_version }}.*
-        - cuda-driver-dev_{{ cross_target_platform }} {{ cuda_version }}.*
+        - cuda-driver-dev_{{ cross_target_platform }} {{ cuda_version }}.*  # [linux]
         - cuda-nvcc-tools {{ version }}.*
         - cuda-nvcc-impl {{ version }}.*   # [target_platform == cross_target_platform]
-        - {{ pin_compatible("sysroot_" ~ cross_target_platform, max_pin="x.x") }}
+        - {{ pin_compatible("sysroot_" ~ cross_target_platform, max_pin="x.x") }}  # [linux]
     test:
       requires:
-        - {{ c_compiler }}_{{ cross_target_platform }} {{ c_compiler_version }}.*
-        - {{ cxx_compiler }}_{{ cross_target_platform }} {{ cxx_compiler_version }}.*
+        - {{ c_compiler }}_{{ cross_target_platform }} {{ c_compiler_version }}.*      # [linux]
+        - {{ cxx_compiler }}_{{ cross_target_platform }} {{ cxx_compiler_version }}.*  # [linux]
+        - {{ c_compiler }}_{{ cross_target_platform }}    # [win]
+        - {{ cxx_compiler }}_{{ cross_target_platform }}  # [win]
         - cmake
         - ninja
         - git    # [linux]
@@ -70,7 +72,7 @@ outputs:
         - run_cmake_cuda_tests.sh  # [linux]
       commands:
         - nvcc --version
-        - $CXX --verbose ${CXXFLAGS} -lcuda -lcudart_static test.cpp
+        - $CXX --verbose ${CXXFLAGS} -lcuda -lcudart_static test.cpp  # [linux]
         - nvcc --verbose test.cu
         - cmake ${CMAKE_ARGS} -S . -B ./build -G=Ninja
         - cmake --build ./build -v
