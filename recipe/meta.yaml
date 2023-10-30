@@ -73,6 +73,7 @@ outputs:
       commands:
         - nvcc --version
         - $CXX --verbose ${CXXFLAGS} -lcuda -lcudart_static test.cpp  # [linux]
+        - cl /Tc test.cpp /link /LIBPATH:"%CONDA_PREFIX%\Library\lib" cudart_static.lib /out:test_nvcc.exe  # [win]
         - nvcc --verbose test.cu
         - cmake ${CMAKE_ARGS} -S . -B ./build -G=Ninja
         - cmake --build ./build -v
