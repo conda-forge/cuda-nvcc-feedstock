@@ -22,6 +22,9 @@ cd cmake-tests/build
 #   CudaOnly.GPUDebugFlag
 #   CudaOnly.SeparateCompilationPTX
 #   CudaOnly.WithDefs
+#   CudaOnly.CUBIN
+#   CudaOnly.Fatbin
+#   CudaOnly.OptixIR
 #   RunCMake.CUDA_architectures
 #   *Toolkit*
 # Failing due to undefined symbol: __libc_dl_error_tsd, version GLIBC_PRIVATE
@@ -32,5 +35,5 @@ then
     if [ "${cross_target_platform}" == "linux-ppc64le" ]; then
       EXTRA_EXCLUDE="|CudaOnly.DontResolveDeviceSymbols"
     fi
-    CUDAHOSTCXX=$CXX ctest -L CUDA --output-on-failure -j $(nproc) -E "(ProperDeviceLibraries|SharedRuntime|ObjectLibrary|WithC|ArchSpecial|GPUDebugFlag|SeparateCompilationPTX|WithDefs|CUDA_architectures|Toolkit|Cuda.Complex$EXTRA_EXCLUDE)"
+    CUDAHOSTCXX=$CXX ctest -L CUDA --output-on-failure -j $(nproc) -E "(ProperDeviceLibraries|SharedRuntime|ObjectLibrary|WithC|ArchSpecial|GPUDebugFlag|SeparateCompilationPTX|WithDefs|CUBIN|Fatbin|OptixIR|CUDA_architectures|Toolkit|Cuda.Complex$EXTRA_EXCLUDE)"
 fi
