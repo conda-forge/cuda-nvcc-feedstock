@@ -43,9 +43,11 @@ outputs:
     run_exports:
       strong:
         - cuda-version >={{ cuda_version }},<{{ cuda_version.split(".")[0]|int + 1 }}
-    files:                                               # [linux]
-      - etc/conda/activate.d/~cuda-nvcc_activate.sh      # [linux]
-      - etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh  # [linux]
+    files:
+      - etc/conda/activate.d/~cuda-nvcc_activate.sh       # [linux]
+      - etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh   # [linux]
+      - etc/conda/activate.d/~cuda-nvcc_activate.bat      # [win]
+      - etc/conda/deactivate.d/~cuda-nvcc_deactivate.bat  # [win]
     requirements:
       host:
         - sysroot_{{ cross_target_platform }} 2.17.*  # [linux]
