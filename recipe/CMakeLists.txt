@@ -14,9 +14,11 @@ set(should_exist
   CUDAToolkit_LIBRARY_ROOT
   )
 foreach (cuda_loc_var IN LISTS should_exist)
-  if(NOT EXISTS "${${cuda_loc_var}}")
-    message(FATAL_ERROR "${cuda_loc} should exist on disk")
-  endif()
+  foreach(entry IN LISTS ${cuda_loc_var})
+    if(NOT EXISTS "${entry}")
+      message(FATAL_ERROR "${entry} from ${cuda_loc_var} should exist on disk")
+    endif()
+  endforeach()
 endforeach()
 
 
