@@ -18,6 +18,7 @@ cd cmake-tests/build
 # Requires execution on a machine with a CUDA GPU
 #   Cuda.ObjectLibrary
 #   Cuda.WithC
+#   Cuda.StubRPATH
 #   CudaOnly.ArchSpecial
 #   CudaOnly.GPUDebugFlag
 #   CudaOnly.SeparateCompilationPTX
@@ -35,5 +36,5 @@ then
     if [ "${cross_target_platform}" == "linux-ppc64le" ]; then
       EXTRA_EXCLUDE="|CudaOnly.DontResolveDeviceSymbols"
     fi
-    CUDAHOSTCXX=$CXX ctest -L CUDA --output-on-failure -j $(nproc) -E "(ProperDeviceLibraries|SharedRuntime|ObjectLibrary|WithC|ArchSpecial|GPUDebugFlag|SeparateCompilationPTX|WithDefs|CUBIN|Fatbin|OptixIR|CUDA_architectures|Toolkit|Cuda.Complex$EXTRA_EXCLUDE)"
+    CUDAHOSTCXX=$CXX ctest -L CUDA --output-on-failure -j $(nproc) -E "(ProperDeviceLibraries|SharedRuntime|ObjectLibrary|WithC|StubRPATH|ArchSpecial|GPUDebugFlag|SeparateCompilationPTX|WithDefs|CUBIN|Fatbin|OptixIR|CUDA_architectures|Toolkit|Cuda.Complex$EXTRA_EXCLUDE)"
 fi

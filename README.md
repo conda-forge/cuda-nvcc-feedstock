@@ -18,6 +18,20 @@ Documentation: https://docs.nvidia.com/cuda/index.html
 Compiler for CUDA applications.
 
 
+About cuda-nvcc_linux-ppc64le
+-----------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+
 About cuda-nvcc_linux-64
 ------------------------
 
@@ -33,20 +47,6 @@ Compiler for CUDA applications.
 
 
 About cuda-nvcc_linux-aarch64
------------------------------
-
-Home: https://developer.nvidia.com/cuda-toolkit
-
-Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
-
-Summary: Compiler activation scripts for CUDA applications.
-
-Documentation: https://docs.nvidia.com/cuda/index.html
-
-Compiler for CUDA applications.
-
-
-About cuda-nvcc_linux-ppc64le
 -----------------------------
 
 Home: https://developer.nvidia.com/cuda-toolkit
@@ -225,7 +225,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
@@ -273,5 +273,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@adibbley](https://github.com/adibbley/)
+* [@conda-forge/cuda](https://github.com/conda-forge/cuda/)
 
