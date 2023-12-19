@@ -108,9 +108,9 @@ outputs:
       license_file: LICENSE.txt
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
-      summary: Compiler for CUDA applications.
+      summary: CUDA internal headers.
       description: |
-        Compiler for CUDA applications.
+        CUDA internal headers.
       doc_url: https://docs.nvidia.com/cuda/index.html
 
   - name: cuda-nvvm
