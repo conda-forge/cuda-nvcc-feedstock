@@ -92,6 +92,55 @@ outputs:
         Compiler for CUDA applications.
       doc_url: https://docs.nvidia.com/cuda/index.html
 
+  - name: cuda-crt
+    build:
+      skip: True  # [target_platform != cross_target_platform]
+    requirements:
+      run:
+        - cuda-crt-dev_{{ target_platform }} {{ version }}.*
+        - cuda-crt-tools {{ version }}.*
+    test:
+      commands:
+        - test -f $PREFIX/bin/crt/link.stub                 # [linux]
+        - if not exist %LIBRARY_BIN%\crt exit 1             # [win]
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE.txt
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: Compiler for CUDA applications.
+      description: |
+        Compiler for CUDA applications.
+      doc_url: https://docs.nvidia.com/cuda/index.html
+
+  - name: cuda-nvvm
+    build:
+      skip: True  # [target_platform != cross_target_platform]
+    requirements:
+      run:
+        - cuda-nvvm-dev_{{ target_platform }} {{ version }}.*
+        - cuda-nvvm-tools {{ version }}.*
+        - cuda-nvvm-impl {{ version }}.*
+    test:
+      commands:
+        - test -f $PREFIX/nvvm/bin/cicc                           # [linux]
+        - test -d $PREFIX/nvvm/libdevice                          # [linux]
+        - test -d $PREFIX/nvvm/include                            # [linux]
+        - test -d $PREFIX/nvvm/lib64                              # [linux]
+        - if not exist %LIBRARY_PREFIX%\nvvm\bin\cicc.exe exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\nvvm\libdevice exit 1     # [win]
+        - if not exist %LIBRARY_PREFIX%\nvvm\include exit 1       # [win]
+        - if not exist %LIBRARY_PREFIX%\nvvm\lib exit 1           # [win]
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE.txt
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: Compiler for CUDA applications.
+      description: |
+        Compiler for CUDA applications.
+      doc_url: https://docs.nvidia.com/cuda/index.html
+
 about:
   home: https://developer.nvidia.com/cuda-toolkit
   license_file: LICENSE.txt
