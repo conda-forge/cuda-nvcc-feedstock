@@ -23,8 +23,25 @@ outputs:
     requirements:
       run:
         - cuda-nvcc_{{ target_platform }} {{ version }}.*
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
+
+        # cuda-nvcc has runtime dependencies on C and C++ compilers, but needs
+        # to support a wider range of host compilers than only the latest
+        # versions pinned in conda-forge-pinning-feedstock. Therefore, we
+        # cannot just list compiler('c') and compiler('cxx') as dependencies.
+        # However, we only need to do this for Linux because Windows has
+        # separate package names for each compiler version, like vs2019 and
+        # vs2022, and we can use compiler('c') and compiler('cxx') to get
+        # those.
+        #
+        # The compiler names for compiler('c') and compiler('cxx') come from
+        # https://github.com/conda-forge/conda-forge-pinning-feedstock/blob/main/recipe/conda_build_config.yaml
+        # The supported host compiler versions for a given nvcc version come from
+        # https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+        # https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html
+        - gcc_{{ target_platform }} >=6,<13  # [linux]
+        - gxx_{{ target_platform }} >=6,<13  # [linux]
+        - compiler('c')    # [not linux]
+        - compiler('cxx')  # [not linux]
     test:
       commands:
         - test -f $PREFIX/bin/nvcc                          # [linux]
