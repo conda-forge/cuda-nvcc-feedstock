@@ -1,6 +1,6 @@
 {% set name = "cuda-nvcc-split" %}
-{% set version = "12.1.105" %}
-{% set cuda_version = "12.1" %}
+{% set version = "12.2.140" %}
+{% set cuda_version = "12.2" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: 5db25d4fd138013b563f9a3d1d87f7de7df1dac014fd4cccdfbb3435a5cff761
 
 build:
-  number: 1
+  number: 0
   skip: true  # [osx]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
@@ -90,6 +90,55 @@ outputs:
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
       summary: Compiler activation scripts for CUDA applications.
+      description: |
+        Compiler for CUDA applications.
+      doc_url: https://docs.nvidia.com/cuda/index.html
+
+  - name: cuda-crt
+    build:
+      skip: True  # [target_platform != cross_target_platform]
+    requirements:
+      run:
+        - cuda-crt-dev_{{ target_platform }} {{ version }}.*
+        - cuda-crt-tools {{ version }}.*
+    test:
+      commands:
+        - test -f $PREFIX/bin/crt/link.stub                 # [linux]
+        - if not exist %LIBRARY_BIN%\crt exit 1             # [win]
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE.txt
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: CUDA internal headers.
+      description: |
+        CUDA internal headers.
+      doc_url: https://docs.nvidia.com/cuda/index.html
+
+  - name: cuda-nvvm
+    build:
+      skip: True  # [target_platform != cross_target_platform]
+    requirements:
+      run:
+        - cuda-nvvm-dev_{{ target_platform }} {{ version }}.*
+        - cuda-nvvm-tools {{ version }}.*
+        - cuda-nvvm-impl {{ version }}.*
+    test:
+      commands:
+        - test -f $PREFIX/nvvm/bin/cicc                           # [linux]
+        - test -d $PREFIX/nvvm/libdevice                          # [linux]
+        - test -d $PREFIX/nvvm/include                            # [linux]
+        - test -d $PREFIX/nvvm/lib64                              # [linux]
+        - if not exist %LIBRARY_PREFIX%\nvvm\bin\cicc.exe exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\nvvm\libdevice exit 1     # [win]
+        - if not exist %LIBRARY_PREFIX%\nvvm\include exit 1       # [win]
+        - if not exist %LIBRARY_PREFIX%\nvvm\lib exit 1           # [win]
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE.txt
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: Compiler for CUDA applications.
       description: |
         Compiler for CUDA applications.
       doc_url: https://docs.nvidia.com/cuda/index.html
