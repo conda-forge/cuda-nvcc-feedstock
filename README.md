@@ -18,7 +18,7 @@ Documentation: https://docs.nvidia.com/cuda/index.html
 Compiler for CUDA applications.
 
 
-About cuda-nvcc_linux-ppc64le
+About cuda-nvcc_linux-aarch64
 -----------------------------
 
 Home: https://developer.nvidia.com/cuda-toolkit
@@ -60,7 +60,7 @@ Documentation: https://docs.nvidia.com/cuda/index.html
 Compiler for CUDA applications.
 
 
-About cuda-nvcc_linux-aarch64
+About cuda-nvcc_linux-ppc64le
 -----------------------------
 
 Home: https://developer.nvidia.com/cuda-toolkit
