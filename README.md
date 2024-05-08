@@ -18,20 +18,6 @@ Documentation: https://docs.nvidia.com/cuda/index.html
 Compiler for CUDA applications.
 
 
-About cuda-nvcc_linux-aarch64
------------------------------
-
-Home: https://developer.nvidia.com/cuda-toolkit
-
-Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
-
-Summary: Compiler activation scripts for CUDA applications.
-
-Documentation: https://docs.nvidia.com/cuda/index.html
-
-Compiler for CUDA applications.
-
-
 About cuda-crt
 --------------
 
@@ -48,6 +34,20 @@ CUDA internal headers.
 
 About cuda-nvcc_linux-64
 ------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+
+About cuda-nvcc_linux-aarch64
+-----------------------------
 
 Home: https://developer.nvidia.com/cuda-toolkit
 
@@ -92,14 +92,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/cuda-nvcc-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/cuda-nvcc-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
