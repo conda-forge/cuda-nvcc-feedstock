@@ -75,16 +75,12 @@ outputs:
         - test.cpp
         - test.cu
         - CMakeLists.txt
-        - run_cmake_cuda_tests.sh  # [linux]
+        - run_nvcc_tests.sh   # [linux]
+        - run_nvcc_tests.bat  # [win]
       commands:
         - {{ exists }} nvcc
-        - nvcc --version
-        - $CXX --verbose ${CXXFLAGS} -lcuda -lcudart_static test.cpp  # [linux]
-        - cl /Tp test.cpp /link /LIBPATH:"%CONDA_PREFIX%\Library\lib" cudart_static.lib /out:test_nvcc.exe  # [win]
-        - nvcc --verbose test.cu
-        - cmake ${CMAKE_ARGS} -S . -B ./build -G=Ninja
-        - cmake --build ./build -v
-        - bash ./run_cmake_cuda_tests.sh  # [linux]
+        - ./run_nvcc_tests.sh   # [linux]
+        - .\run_nvcc_tests.bat  # [win]
         - test -f $PREFIX/etc/conda/activate.d/~cuda-nvcc_activate.sh      # [linux]
         - test -f $PREFIX/etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh  # [linux]
     about:
