@@ -13,8 +13,10 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
     CUDA_CFLAGS="${CUDA_CFLAGS} -I${BUILD_PREFIX}/${targetsDir}/include"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${PREFIX}/${targetsDir}/lib"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${PREFIX}/${targetsDir}/lib/stubs"
+    CUDA_LDFLAGS="${CUDA_LDFLAGS} -Wl,-rpath-link,${PREFIX}/${targetsDir}/lib/stubs"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${BUILD_PREFIX}/${targetsDir}/lib"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${BUILD_PREFIX}/${targetsDir}/lib/stubs"
+    CUDA_LDFLAGS="${CUDA_LDFLAGS} -Wl,-rpath-link,${BUILD_PREFIX}/${targetsDir}/lib/stubs"
     # Needed to fix cross compilation.
     # $PREFIX and $PREFIX/${targetsDir} are needed to properly find all host components
     # $BUILD_PREFIX/$HOST/sysroot is needed to find compiler bits and is placed before any `targetsDir` for priority.
@@ -24,6 +26,7 @@ else
     CUDA_CFLAGS="${CUDA_CFLAGS} -I${CONDA_PREFIX}/${targetsDir}/include"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${CONDA_PREFIX}/${targetsDir}/lib"
     CUDA_LDFLAGS="${CUDA_LDFLAGS} -L${CONDA_PREFIX}/${targetsDir}/lib/stubs"
+    CUDA_LDFLAGS="${CUDA_LDFLAGS} -Wl,-rpath-link,${CONDA_PREFIX}/${targetsDir}/lib/stubs"
 fi
 export CFLAGS="${CFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
 export CPPFLAGS="${CPPFLAGS} ${CUDA_CFLAGS} ${CUDA_LDFLAGS}"
