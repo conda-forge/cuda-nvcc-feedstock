@@ -15,7 +15,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [osx]
+  skip: true  # [osx or ppc64le]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
 outputs:
