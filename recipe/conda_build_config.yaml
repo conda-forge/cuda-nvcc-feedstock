@@ -6,6 +6,5 @@ arm_variant_type:          # [aarch64]
   - sbsa                   # [aarch64]
 cross_target_platform:
   - linux-64       # [linux]
-  - linux-ppc64le  # [linux]
   - linux-aarch64  # [linux]
   - win-64         # [win]
