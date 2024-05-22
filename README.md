@@ -32,6 +32,20 @@ Documentation: https://docs.nvidia.com/cuda/index.html
 Compiler for CUDA applications.
 
 
+About cuda-nvcc_linux-aarch64
+-----------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+
 About cuda-crt
 --------------
 
@@ -48,20 +62,6 @@ CUDA internal headers.
 
 About cuda-nvcc_linux-64
 ------------------------
-
-Home: https://developer.nvidia.com/cuda-toolkit
-
-Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
-
-Summary: Compiler activation scripts for CUDA applications.
-
-Documentation: https://docs.nvidia.com/cuda/index.html
-
-Compiler for CUDA applications.
-
-
-About cuda-nvcc_linux-aarch64
------------------------------
 
 Home: https://developer.nvidia.com/cuda-toolkit
 
@@ -131,13 +131,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-aarch64" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-ppc64le" alt="variant">
                 </a>
               </td>
             </tr><tr>

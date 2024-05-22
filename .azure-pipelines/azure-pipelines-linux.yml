@@ -24,10 +24,6 @@ jobs:
         CONFIG: linux_aarch64_cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_cross_target_platformlinux-ppc64le:
-        CONFIG: linux_ppc64le_cross_target_platformlinux-ppc64le
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360
   variables: {}
 
