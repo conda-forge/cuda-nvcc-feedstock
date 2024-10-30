@@ -54,14 +54,14 @@ outputs:
       - etc/conda/deactivate.d/~cuda-nvcc_deactivate.bat  # [win]
     requirements:
       host:
-        - sysroot_{{ cross_target_platform }} 2.17.*  # [linux]
+        - {{ c_stdlib }}_{{ cross_target_platform }} 2.17.*  # [linux]
       run:
         - cuda-nvcc-dev_{{ cross_target_platform }} {{ version }}.*
         - cuda-cudart-dev_{{ cross_target_platform }} {{ cuda_version }}.*
         - cuda-driver-dev_{{ cross_target_platform }} {{ cuda_version }}.*  # [linux]
         - cuda-nvcc-tools {{ version }}.*
         - cuda-nvcc-impl {{ version }}.*   # [target_platform == cross_target_platform]
-        - {{ pin_compatible("sysroot_" ~ cross_target_platform) }}  # [linux]
+        - {{ pin_compatible(c_stdlib ~ "_" ~ cross_target_platform) }}  # [linux]
     test:
       requires:
         - {{ c_compiler }}_{{ cross_target_platform }} {{ c_compiler_version }}.*      # [linux]
