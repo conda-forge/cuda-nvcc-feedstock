@@ -14,7 +14,7 @@ source:
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
 build:
-  number: 1
+  number: 2
   skip: true  # [osx or ppc64le]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
@@ -54,14 +54,14 @@ outputs:
       - etc/conda/deactivate.d/~cuda-nvcc_deactivate.bat  # [win]
     requirements:
       host:
-        - sysroot_{{ cross_target_platform }} 2.17.*  # [linux]
+        - {{ c_stdlib }}_{{ cross_target_platform }} {{ c_stdlib_version }}  # [linux]
       run:
         - cuda-nvcc-dev_{{ cross_target_platform }} {{ version }}.*
         - cuda-cudart-dev_{{ cross_target_platform }} {{ cuda_version }}.*
         - cuda-driver-dev_{{ cross_target_platform }} {{ cuda_version }}.*  # [linux]
         - cuda-nvcc-tools {{ version }}.*
         - cuda-nvcc-impl {{ version }}.*   # [target_platform == cross_target_platform]
-        - {{ pin_compatible("sysroot_" ~ cross_target_platform) }}  # [linux]
+        - {{ pin_compatible(c_stdlib ~ "_" ~ cross_target_platform) }}  # [linux]
     test:
       requires:
         - {{ c_compiler }}_{{ cross_target_platform }} {{ c_compiler_version }}.*      # [linux]
