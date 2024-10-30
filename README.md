@@ -18,20 +18,6 @@ Documentation: https://docs.nvidia.com/cuda/index.html
 Compiler for CUDA applications.
 
 
-About cuda-nvcc_linux-aarch64
------------------------------
-
-Home: https://developer.nvidia.com/cuda-toolkit
-
-Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
-
-Summary: Compiler activation scripts for CUDA applications.
-
-Documentation: https://docs.nvidia.com/cuda/index.html
-
-Compiler for CUDA applications.
-
-
 About cuda-crt
 --------------
 
@@ -48,6 +34,20 @@ CUDA internal headers.
 
 About cuda-nvcc_linux-64
 ------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: Compiler activation scripts for CUDA applications.
+
+Documentation: https://docs.nvidia.com/cuda/index.html
+
+Compiler for CUDA applications.
+
+
+About cuda-nvcc_linux-aarch64
+-----------------------------
 
 Home: https://developer.nvidia.com/cuda-toolkit
 
@@ -254,7 +254,4 @@ Feedstock Maintainers
 =====================
 
 * [@conda-forge/cuda](https://github.com/orgs/conda-forge/teams/cuda/)
-
-
-<!-- dummy commit to enable rerendering -->
 
