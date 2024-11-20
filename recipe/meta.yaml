@@ -1,5 +1,5 @@
 {% set name = "cuda-nvcc-split" %}
-{% set version = "12.6.77" %}
+{% set version = "12.6.85" %}
 {% set cuda_version = "12.6" %}
 {% set exists = "which" %}  # [not win]
 {% set exists = "where" %}  # [win]
@@ -14,7 +14,7 @@ source:
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
 build:
-  number: 2
+  number: 0
   skip: true  # [osx or ppc64le]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
