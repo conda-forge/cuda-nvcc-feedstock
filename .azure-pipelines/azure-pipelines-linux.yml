@@ -24,10 +24,6 @@ jobs:
         CONFIG: linux_aarch64_DEFAULT_CUDAARCHS50-r_h87149aa4aa
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
-      linux_aarch64_DEFAULT_CUDAARCHS50-r_hb3c26677c5:
-        CONFIG: linux_aarch64_DEFAULT_CUDAARCHS50-r_hb3c26677c5
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
       : CONFIG: linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'

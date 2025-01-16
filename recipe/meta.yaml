@@ -21,7 +21,7 @@ source:
 build:
   number: {{ number }}
   skip: true  # [osx or ppc64le]
-  # skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
+  skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
   script_env:
   # We need to reference these variables in the recipe or conda-smithy will prune them from
   # the conda_build_config
