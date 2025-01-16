@@ -28,6 +28,10 @@ build:
     - DEFAULT_CUDAARCHS={{ DEFAULT_CUDAARCHS }}
     - DEFAULT_TORCH_CUDA_ARCH_LIST={{ DEFAULT_TORCH_CUDA_ARCH_LIST }}
 
+requirements:  # [win]
+  build:  # [win]
+    - m2-sed  # [win]
+
 outputs:
   - name: cuda-nvcc
     build:
