@@ -61,21 +61,13 @@ fi
 
 # Set good defaults for common target architectures according to host platform for common
 # configuration environment variables
-if [[ ! -z "${CUDAARCHS+x}" ]]
+if [[ -z "${CUDAARCHS+x}" ]]
 then
-    export CUDAARCHS_BACKUP="${CUDAARCHS}"
+    export CUDAARCHS="@default_cudaarchs@"
 fi
-if [[ ! -z "${TORCH_CUDA_ARCH_LIST+x}" ]]
+if [[ -z "${TORCH_CUDA_ARCH_LIST+x}" ]]
 then
-    export TORCH_CUDA_ARCH_LIST_BACKUP="${TORCH_CUDA_ARCH_LIST}"
-fi
-
-if [[ "@arm_variant_type@" == "tegra" ]]; then
-    export CUDAARCHS="72-real;87"
-    export TORCH_CUDA_ARCH_LIST="7.2;8.7+PTX"
-else
-    export CUDAARCHS="50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90"
-    export TORCH_CUDA_ARCH_LIST="5.0;5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.9;9.0+PTX"
+    export TORCH_CUDA_ARCH_LIST="@default_torch_cuda_arch_list@"
 fi
 
 # Exit with unclean status if there was an error

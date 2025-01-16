@@ -13,10 +13,20 @@ source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/LICENSE.txt
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
+{% set number = 0 %}
+{% if arm_variant_target == "sbsa" %}
+{% set number = number + 100 %}
+{% endif %}
+
 build:
-  number: 0
+  number: {{ number }}
   skip: true  # [osx or ppc64le]
-  skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
+  # skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
+  script_env:
+  # We need to reference these variables in the recipe or conda-smithy will prune them from
+  # the conda_build_config
+    - DEFAULT_CUDAARCHS={{ DEFAULT_CUDAARCHS }}
+    - DEFAULT_TORCH_CUDA_ARCH_LIST={{ DEFAULT_TORCH_CUDA_ARCH_LIST }}
 
 outputs:
   - name: cuda-nvcc
@@ -47,6 +57,7 @@ outputs:
     run_exports:
       strong:
         - cuda-version >={{ cuda_version }},<{{ cuda_version.split(".")[0]|int + 1 }}
+        - arm-variant {{ arm_variant_target }}  # [arm_variant_target != "None"]
     files:
       - etc/conda/activate.d/~cuda-nvcc_activate.sh       # [linux]
       - etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh   # [linux]
@@ -62,6 +73,7 @@ outputs:
         - cuda-nvcc-tools {{ version }}.*
         - cuda-nvcc-impl {{ version }}.*   # [target_platform == cross_target_platform]
         - {{ pin_compatible(c_stdlib ~ "_" ~ cross_target_platform) }}  # [linux]
+        # - cuda-nvcc-arm-variant-target * {{ arm_variant_target }}  # [arm_variant_target != "None"]
     test:
       requires:
         - {{ c_compiler }}_{{ cross_target_platform }} {{ c_compiler_version }}.*      # [linux]

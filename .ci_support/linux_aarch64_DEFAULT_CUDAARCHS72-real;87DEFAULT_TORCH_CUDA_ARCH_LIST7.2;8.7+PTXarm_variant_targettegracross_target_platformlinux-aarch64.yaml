@@ -1,23 +1,37 @@
 DEFAULT_CUDAARCHS:
-- 50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90
+- 72-real;87
 DEFAULT_TORCH_CUDA_ARCH_LIST:
-- 5.0;5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.9;9.0+PTX
+- 7.2;8.7+PTX
 arm_variant_target:
-- None
+- tegra
 c_compiler:
-- vs2019
+- gcc
+c_compiler_version:
+- '12'
+c_stdlib:
+- sysroot
+c_stdlib_version:
+- '2.17'
+cdt_name:
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cross_target_platform:
-- win-64
+- linux-aarch64
 cxx_compiler:
-- vs2019
+- gxx
+cxx_compiler_version:
+- '12'
+docker_image:
+- quay.io/condaforge/linux-anvil-x86_64:cos7
 target_platform:
-- win-64
+- linux-aarch64
 zip_keys:
 - - arm_variant_target
   - cross_target_platform
   - DEFAULT_CUDAARCHS
   - DEFAULT_TORCH_CUDA_ARCH_LIST
+- - c_compiler_version
+  - cxx_compiler_version
