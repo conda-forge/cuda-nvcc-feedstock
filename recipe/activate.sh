@@ -59,5 +59,16 @@ else
     export NVCC_APPEND_FLAGS
 fi
 
+# Set good defaults for common target architectures according to host platform for common
+# configuration environment variables
+if [[ -z "${CUDAARCHS+x}" ]]
+then
+    export CUDAARCHS="@default_cudaarchs@"
+fi
+if [[ -z "${TORCH_CUDA_ARCH_LIST+x}" ]]
+then
+    export TORCH_CUDA_ARCH_LIST="@default_torch_cuda_arch_list@"
+fi
+
 # Exit with unclean status if there was an error
 ! $ERROR
