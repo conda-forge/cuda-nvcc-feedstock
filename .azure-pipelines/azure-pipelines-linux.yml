@@ -11,15 +11,15 @@ jobs:
       linux_64_cross_target_platformlinux-64:
         CONFIG: linux_64_cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       linux_64_cross_target_platformlinux-aarch64:
         CONFIG: linux_64_cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       linux_aarch64_cross_target_platformlinux-aarch64:
         CONFIG: linux_aarch64_cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
   timeoutInMinutes: 360
   variables: {}
 
