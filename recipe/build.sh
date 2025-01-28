@@ -8,6 +8,7 @@ for CHANGE in "activate" "deactivate"
 do
     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
     sed -e "s/@cross_target_platform@/$cross_target_platform/g" \
+        -e "s/@arm_variant_target@/$arm_variant_target/g" \
         -e "s/@default_cudaarchs@/$DEFAULT_CUDAARCHS/g" \
         -e "s/@default_torch_cuda_arch_list@/$DEFAULT_TORCH_CUDA_ARCH_LIST/g" \
     "${RECIPE_DIR}/${CHANGE}.sh" > "${PREFIX}/etc/conda/${CHANGE}.d/~cuda-nvcc_${CHANGE}.sh"

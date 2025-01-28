@@ -5,6 +5,8 @@ ERROR=false
 [[ "@cross_target_platform@" == "linux-64" ]] && targetsDir="targets/x86_64-linux"
 [[ "@cross_target_platform@" == "linux-ppc64le" ]] && targetsDir="targets/ppc64le-linux"
 [[ "@cross_target_platform@" == "linux-aarch64" ]] && targetsDir="targets/sbsa-linux"
+[[ "@arm_variant_target@" == "sbsa" ]] && targetsDir="targets/sbsa-linux"
+[[ "@arm_variant_target@" == "tegra" ]] && targetsDir="targets/aarch64-linux"
 
 CUDA_CFLAGS=""
 CUDA_LDFLAGS=""
