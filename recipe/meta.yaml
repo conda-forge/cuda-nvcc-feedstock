@@ -61,7 +61,7 @@ outputs:
     run_exports:
       strong:
         - cuda-version >={{ cuda_version }},<{{ cuda_version.split(".")[0]|int + 1 }}
-        - arm-variant {{ arm_variant_target }}  # [arm_variant_target != "None"]
+        - arm-variant * {{ arm_variant_target }}  # [arm_variant_target != "None"]
     files:
       - etc/conda/activate.d/~cuda-nvcc_activate.sh       # [linux]
       - etc/conda/deactivate.d/~cuda-nvcc_deactivate.sh   # [linux]
@@ -77,7 +77,7 @@ outputs:
         - cuda-nvcc-tools {{ version }}.*
         - cuda-nvcc-impl {{ version }}.*   # [target_platform == cross_target_platform]
         - {{ pin_compatible(c_stdlib ~ "_" ~ cross_target_platform) }}  # [linux]
-        - cuda-nvcc-arm-variant-target * {{ arm_variant_target }}  # [arm_variant_target != "None"]
+        - arm-variant * {{ arm_variant_target }}  # [arm_variant_target != "None"]
     test:
       requires:
         - {{ c_compiler }}_{{ cross_target_platform }} {{ c_compiler_version }}.*      # [linux]
