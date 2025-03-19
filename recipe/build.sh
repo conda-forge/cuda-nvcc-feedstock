@@ -9,3 +9,5 @@ do
     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
     sed "s/@cross_target_platform@/$cross_target_platform/g" "${RECIPE_DIR}/${CHANGE}.sh" > "${PREFIX}/etc/conda/${CHANGE}.d/~cuda-nvcc_${CHANGE}.sh"
 done
+
+check-glibc "$PREFIX"/lib*/*.so.* "$PREFIX"/bin/* "$PREFIX"/targets/*/lib*/*.so.* "$PREFIX"/targets/*/bin/*
