@@ -14,14 +14,18 @@ source:
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
 build:
-  number: 0
+  number: 1
   skip: true  # [osx or ppc64le]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
+
+requirements:
+  build:
+    - cf-nvidia-tools 1.*  # [linux]
 
 outputs:
   - name: cuda-nvcc
     build:
-      skip: True  # [target_platform != cross_target_platform]
+      skip: true  # [target_platform != cross_target_platform]
     requirements:
       run:
         - cuda-nvcc_{{ target_platform }} {{ version }}.*
@@ -95,7 +99,7 @@ outputs:
 
   - name: cuda-crt
     build:
-      skip: True  # [target_platform != cross_target_platform]
+      skip: true  # [target_platform != cross_target_platform]
     requirements:
       run:
         - cuda-crt-dev_{{ target_platform }} {{ version }}.*
@@ -116,7 +120,7 @@ outputs:
 
   - name: cuda-nvvm
     build:
-      skip: True  # [target_platform != cross_target_platform]
+      skip: true  # [target_platform != cross_target_platform]
     requirements:
       run:
         - cuda-nvvm-dev_{{ target_platform }} {{ version }}.*
