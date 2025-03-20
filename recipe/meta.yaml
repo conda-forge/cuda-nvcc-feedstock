@@ -18,6 +18,10 @@ build:
   skip: true  # [osx or ppc64le]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
+requirements:
+  build:
+    - cf-nvidia-tools 1.*  # [linux]
+
 outputs:
   - name: cuda-nvcc
     build:
