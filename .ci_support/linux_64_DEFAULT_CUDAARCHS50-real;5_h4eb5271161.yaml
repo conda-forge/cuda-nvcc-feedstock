@@ -1,9 +1,9 @@
 DEFAULT_CUDAARCHS:
-- 50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90
+- 50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90-real;100-real;101-real;120
 DEFAULT_TORCH_CUDA_ARCH_LIST:
-- 5.0;5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.9;9.0+PTX
+- 5.0;5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.9;9.0;10.0;10.1;12.0+PTX
 arm_variant_target:
-- sbsa
+- None
 c_compiler:
 - gcc
 c_compiler_version:
@@ -19,7 +19,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cross_target_platform:
-- linux-aarch64
+- linux-64
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -27,7 +27,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 target_platform:
-- linux-aarch64
+- linux-64
 zip_keys:
 - - arm_variant_target
   - cross_target_platform

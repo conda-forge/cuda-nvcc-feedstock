@@ -1,5 +1,5 @@
 {% set name = "cuda-nvcc-split" %}
-{% set version = "12.8.61" %}
+{% set version = "12.8.93" %}
 {% set cuda_version = "12.8" %}
 {% set exists = "which" %}  # [not win]
 {% set exists = "where" %}  # [win]
@@ -13,7 +13,7 @@ source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/LICENSE.txt
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
-{% set number = 1 %}
+{% set number = 2 %}
 {% if arm_variant_target == "sbsa" %}
 {% set number = number + 100 %}
 {% endif %}
@@ -32,10 +32,14 @@ requirements:  # [win]
   build:  # [win]
     - m2-sed  # [win]
 
+requirements:
+  build:
+    - cf-nvidia-tools 1.*  # [linux]
+
 outputs:
   - name: cuda-nvcc
     build:
-      skip: True  # [target_platform != cross_target_platform]
+      skip: true  # [target_platform != cross_target_platform]
     requirements:
       run:
         - cuda-nvcc_{{ target_platform }} {{ version }}.*
@@ -111,7 +115,7 @@ outputs:
 
   - name: cuda-crt
     build:
-      skip: True  # [target_platform != cross_target_platform]
+      skip: true  # [target_platform != cross_target_platform]
     requirements:
       run:
         - cuda-crt-dev_{{ target_platform }} {{ version }}.*
@@ -132,7 +136,7 @@ outputs:
 
   - name: cuda-nvvm
     build:
-      skip: True  # [target_platform != cross_target_platform]
+      skip: true  # [target_platform != cross_target_platform]
     requirements:
       run:
         - cuda-nvvm-dev_{{ target_platform }} {{ version }}.*
