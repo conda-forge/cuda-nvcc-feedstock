@@ -4,8 +4,8 @@ cxx_compiler_version:      # [linux]
   - 12                     # [linux]
 arm_variant_target:
   - None
-  - tegra                  # [linux]
   - sbsa                   # [linux]
+  - tegra                  # [linux]
 cross_target_platform:
   - None           # [not (linux or win)]
   - linux-64       # [linux]
@@ -14,12 +14,12 @@ cross_target_platform:
   - win-64         # [win]
 DEFAULT_CUDAARCHS:
   - "50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90"
-  - "72-real;87"  # [linux]
   - "50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90"  # [linux]
+  - "72-real;87"  # [linux]
 DEFAULT_TORCH_CUDA_ARCH_LIST:
   - "5.0;5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.9;9.0+PTX"
-  - "7.2;8.7+PTX"  # [linux]
   - "5.0;5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.9;9.0+PTX"  # [linux]
+  - "7.2;8.7+PTX"  # [linux]
 
 zip_keys:
   - arm_variant_target
