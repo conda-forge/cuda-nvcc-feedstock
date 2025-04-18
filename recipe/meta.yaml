@@ -14,7 +14,7 @@ source:
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
 build:
-  number: 1
+  number: 0
   skip: true  # [osx or ppc64le]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
 
@@ -136,6 +136,33 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\nvvm\libdevice exit 1     # [win]
         - if not exist %LIBRARY_PREFIX%\nvvm\include exit 1       # [win]
         - if not exist %LIBRARY_PREFIX%\nvvm\lib exit 1           # [win]
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE.txt
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: Compiler for CUDA applications.
+      description: |
+        Compiler for CUDA applications.
+      doc_url: https://docs.nvidia.com/cuda/index.html
+
+  - name: libnvptxcompiler-dev
+    build:
+      noarch: generic
+    requirements:
+      host:
+        - cuda-version {{ cuda_version }}
+      run:
+        - {{ pin_compatible("libnvptxcompiler-dev_" ~ target_platform, exact=True) }}
+        - {{ pin_compatible("cuda-version", max_pin="x.x") }}
+        - arm-variant * {{ arm_variant_type }}    # [aarch64]
+    test:
+      commands:
+        - test -f $PREFIX/targets/{{ target_platform }}/lib/libnvptxcompiler_static.a     # [linux]
+        - test -f $PREFIX/targets/{{ target_platform }}/include/nvPTXCompiler.h           # [linux]
+        - test -L $PREFIX/lib/libnvptxcompiler_static.a                               # [linux]
+        - if not exist %LIBRARY_LIB%\nvptxcompiler_static.lib exit 1                  # [win]
+        - if not exist %LIBRARY_INC%\nvPTXCompiler.h exit 1                           # [win]
     about:
       home: https://developer.nvidia.com/cuda-toolkit
       license_file: LICENSE.txt
