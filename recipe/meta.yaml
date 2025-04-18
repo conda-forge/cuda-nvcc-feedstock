@@ -162,6 +162,33 @@ outputs:
         Compiler for CUDA applications.
       doc_url: https://docs.nvidia.com/cuda/index.html
 
+  - name: libnvptxcompiler-dev
+    build:
+      noarch: generic
+    requirements:
+      host:
+        - cuda-version {{ cuda_version }}
+      run:
+        - {{ pin_compatible("libnvptxcompiler-dev_" ~ target_platform, exact=True) }}
+        - {{ pin_compatible("cuda-version", max_pin="x.x") }}
+        - arm-variant * {{ arm_variant_type }}    # [aarch64]
+    test:
+      commands:
+        - test -f $PREFIX/targets/{{ target_platform }}/lib/libnvptxcompiler_static.a     # [linux]
+        - test -f $PREFIX/targets/{{ target_platform }}/include/nvPTXCompiler.h           # [linux]
+        - test -L $PREFIX/lib/libnvptxcompiler_static.a                               # [linux]
+        - if not exist %LIBRARY_LIB%\nvptxcompiler_static.lib exit 1                  # [win]
+        - if not exist %LIBRARY_INC%\nvPTXCompiler.h exit 1                           # [win]
+    about:
+      home: https://developer.nvidia.com/cuda-toolkit
+      license_file: LICENSE.txt
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_url: https://docs.nvidia.com/cuda/eula/index.html
+      summary: Compiler for CUDA applications.
+      description: |
+        Compiler for CUDA applications.
+      doc_url: https://docs.nvidia.com/cuda/index.html
+
 about:
   home: https://developer.nvidia.com/cuda-toolkit
   license_file: LICENSE.txt
