@@ -8,20 +8,20 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_DEFAULT_CUDAARCHS50-real;5_h4eb5271161:
-        CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;5_h4eb5271161
+      linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9:
+        CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_DEFAULT_CUDAARCHS50-real;5_hff95ef549b:
-        CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;5_hff95ef549b
+      linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759:
+        CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       ? linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
       : CONFIG: linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_DEFAULT_CUDAARCHS50-r_hcadd361478:
-        CONFIG: linux_aarch64_DEFAULT_CUDAARCHS50-r_hcadd361478
+      linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67:
+        CONFIG: linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       ? linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
