@@ -1,7 +1,7 @@
 DEFAULT_CUDAARCHS:
-- 72-real;87
+- '87'
 DEFAULT_TORCH_CUDA_ARCH_LIST:
-- 7.2;8.7+PTX
+- 8.7+PTX
 arm_variant_target:
 - tegra
 c_compiler:

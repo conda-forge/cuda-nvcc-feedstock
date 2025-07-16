@@ -8,24 +8,24 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9:
-        CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9
+      ? linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_targetNonec_hc9020746
+      : CONFIG: linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_targetNonec_hc9020746
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759:
-        CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759
+      ? linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_targetsbsac_h964ac52a
+      : CONFIG: linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_targetsbsac_h964ac52a
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
-      : CONFIG: linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
+      linux_64_DEFAULT_CUDAARCHS87DEFAULT_TORCH_CUDA_ARCH_LIST8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64:
+        CONFIG: linux_64_DEFAULT_CUDAARCHS87DEFAULT_TORCH_CUDA_ARCH_LIST8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67:
-        CONFIG: linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67
+      ? linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_target_h64189495
+      : CONFIG: linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_target_h64189495
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
-      : CONFIG: linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
+      ? linux_aarch64_DEFAULT_CUDAARCHS87DEFAULT_TORCH_CUDA_ARCH_LIST8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
+      : CONFIG: linux_aarch64_DEFAULT_CUDAARCHS87DEFAULT_TORCH_CUDA_ARCH_LIST8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
   timeoutInMinutes: 360

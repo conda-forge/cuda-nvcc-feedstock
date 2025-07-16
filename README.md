@@ -92,38 +92,38 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9</td>
+              <td>linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_targetNonec_hc9020746</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_targetNonec_hc9020746" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759</td>
+              <td>linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_targetsbsac_h964ac52a</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_targetsbsac_h964ac52a" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_64_DEFAULT_CUDAARCHS87DEFAULT_TORCH_CUDA_ARCH_LIST8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS87DEFAULT_TORCH_CUDA_ARCH_LIST8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67</td>
+              <td>linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_target_h64189495</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121DEFAULT_TORCH_CUDA_ARCH_LIST7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTXarm_variant_target_h64189495" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_aarch64_DEFAULT_CUDAARCHS87DEFAULT_TORCH_CUDA_ARCH_LIST8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS87DEFAULT_TORCH_CUDA_ARCH_LIST8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -152,6 +152,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc__linux--aarch64-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc_linux-aarch64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc_linux-aarch64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc_linux-aarch64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_linux-aarch64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc__win--64-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc_win-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc_win-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_win-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc_win-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_win-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc_win-64.svg)](https://anaconda.org/conda-forge/cuda-nvcc_win-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvvm-green.svg)](https://anaconda.org/conda-forge/cuda-nvvm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvvm.svg)](https://anaconda.org/conda-forge/cuda-nvvm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvvm.svg)](https://anaconda.org/conda-forge/cuda-nvvm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvvm.svg)](https://anaconda.org/conda-forge/cuda-nvvm) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libnvptxcompiler--dev-green.svg)](https://anaconda.org/conda-forge/libnvptxcompiler-dev) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libnvptxcompiler-dev.svg)](https://anaconda.org/conda-forge/libnvptxcompiler-dev) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libnvptxcompiler-dev.svg)](https://anaconda.org/conda-forge/libnvptxcompiler-dev) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libnvptxcompiler-dev.svg)](https://anaconda.org/conda-forge/libnvptxcompiler-dev) |
 
 Installing cuda-nvcc
 ====================
@@ -163,16 +164,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cuda-crt, cuda-nvcc, cuda-nvcc_linux-64, cuda-nvcc_linux-aarch64, cuda-nvcc_win-64, cuda-nvvm` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `cuda-crt, cuda-nvcc, cuda-nvcc_linux-64, cuda-nvcc_linux-aarch64, cuda-nvcc_win-64, cuda-nvvm, libnvptxcompiler-dev` can be installed with `conda`:
 
 ```
-conda install cuda-crt cuda-nvcc cuda-nvcc_linux-64 cuda-nvcc_linux-aarch64 cuda-nvcc_win-64 cuda-nvvm
+conda install cuda-crt cuda-nvcc cuda-nvcc_linux-64 cuda-nvcc_linux-aarch64 cuda-nvcc_win-64 cuda-nvvm libnvptxcompiler-dev
 ```
 
 or with `mamba`:
 
 ```
-mamba install cuda-crt cuda-nvcc cuda-nvcc_linux-64 cuda-nvcc_linux-aarch64 cuda-nvcc_win-64 cuda-nvvm
+mamba install cuda-crt cuda-nvcc cuda-nvcc_linux-64 cuda-nvcc_linux-aarch64 cuda-nvcc_win-64 cuda-nvvm libnvptxcompiler-dev
 ```
 
 It is possible to list all of the versions of `cuda-crt` available on your platform with `conda`:

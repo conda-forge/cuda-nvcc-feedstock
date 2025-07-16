@@ -1,11 +1,11 @@
 DEFAULT_CUDAARCHS:
-- 50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90-real;100-real;101-real;103-real;120-real;121
+- 75-real;80-real;86-real;89-real;90-real;100-real;103-real;120-real;121
 DEFAULT_TORCH_CUDA_ARCH_LIST:
-- 5.0;5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.9;9.0;10.0;10.1;10.3;12.0;12.1+PTX
+- 7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTX
 arm_variant_target:
 - None
 c_compiler:
-- vs2019
+- vs2022
 channel_sources:
 - conda-forge
 channel_targets:
@@ -13,7 +13,7 @@ channel_targets:
 cross_target_platform:
 - win-64
 cxx_compiler:
-- vs2019
+- vs2022
 target_platform:
 - win-64
 zip_keys:
