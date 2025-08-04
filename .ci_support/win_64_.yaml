@@ -5,7 +5,7 @@ DEFAULT_TORCH_CUDA_ARCH_LIST:
 arm_variant_target:
 - None
 c_compiler:
-- vs2019
+- vs2022
 channel_sources:
 - conda-forge
 channel_targets:
@@ -13,7 +13,7 @@ channel_targets:
 cross_target_platform:
 - win-64
 cxx_compiler:
-- vs2019
+- vs2022
 target_platform:
 - win-64
 zip_keys:
