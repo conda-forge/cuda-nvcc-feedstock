@@ -27,7 +27,7 @@ cmake_version=$(cmake --version | grep version | awk '{print $3}')
 
 nvcc --version
 
-$CXX --verbose ${CXXFLAGS} test.cpp ${LDFLAGS} -lcuda -lcudart_static
+$CXX --verbose -std=c++17 ${CXXFLAGS} test.cpp ${LDFLAGS} -lcuda -lcudart_static
 
 nvcc --verbose test.cu
 
