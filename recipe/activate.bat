@@ -6,7 +6,7 @@ if defined INCLUDE (
 )
 
 :: Append `targets` to search path to give exist includes preference
-set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\targets\x64"
+set "INCLUDE=%INCLUDE%;%LIBRARY_INC%\targets\x64;%LIBRARY_INC%\targets\x64\cccl"
 
 :: Set good defaults for common target architectures according to host platform for common
 :: configuration environment variables
