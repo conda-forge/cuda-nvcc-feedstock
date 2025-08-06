@@ -27,7 +27,7 @@ cmake_version=$(cmake --version | grep version | awk '{print $3}')
 
 nvcc --version
 
-$CXX --verbose ${CXXFLAGS} test.cpp ${LDFLAGS} -lcuda -lcudart_static
+$CXX --verbose -std=c++17 ${CXXFLAGS} test.cpp ${LDFLAGS} -lcuda -lcudart_static
 
 nvcc --verbose test.cu
 
@@ -36,7 +36,7 @@ cmake --build ./build -v
 
 mkdir -p cmake-tests
 git clone -b v${cmake_version} --depth 1 https://gitlab.kitware.com/cmake/cmake.git cmake-tests
-cmake -S cmake-tests -B cmake-tests/build ${CMAKE_ARGS} -DCMake_TEST_HOST_CMAKE=ON -DCMake_TEST_CUDA=nvcc -G "Ninja"
+cmake -S cmake-tests -B cmake-tests/build ${CMAKE_ARGS} -DCMake_TEST_HOST_CMAKE=ON -DCMake_TEST_CUDA=nvcc -DCMake_TEST_CUDA_ARCH=75 -G "Ninja"
 cd cmake-tests/build
 
 # Test exclusion list:

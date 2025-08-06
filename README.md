@@ -92,38 +92,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9</td>
+              <td>linux_64_arm_variant_targetNonecross_target_platformlinux-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_arm_variant_targetNonecross_target_platformlinux-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759</td>
+              <td>linux_64_arm_variant_targetsbsacross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_arm_variant_targetsbsacross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_aarch64_arm_variant_targetsbsacross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_arm_variant_targetsbsacross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
