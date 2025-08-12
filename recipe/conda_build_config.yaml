@@ -19,13 +19,13 @@ cross_target_platform:
 # https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#virtual-architecture-feature-list
 # https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#gpu-feature-list
 DEFAULT_CUDAARCHS:
-  - "75-real;80-real;86-real;89-real;90-real;100-real;103-real;110-real;120-real;121"
-  - "75-real;80-real;86-real;89-real;90-real;100-real;103-real;110-real;120-real;121"  # [linux]
-#  - "72-real;87"  # [linux]
+  - "75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120f-real;121"
+  - "75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120f-real;121"  # [linux]
+#  - "72-real;87-real;110"  # [linux]
 DEFAULT_TORCH_CUDA_ARCH_LIST:
-  - "7.5;8.0;8.6;8.9;9.0;10.0;10.3;11.0;12.0;12.1+PTX"
-  - "7.5;8.0;8.6;8.9;9.0;10.0;10.3;11.0;12.0;12.1+PTX"  # [linux]
-#  - 8.7+PTX"  # [linux]
+  - "7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTX"
+  - "7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTX"  # [linux]
+#  - "8.7;11.0+PTX"  # [linux]
 
 zip_keys:
   - arm_variant_target
