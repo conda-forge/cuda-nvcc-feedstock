@@ -1,7 +1,7 @@
 DEFAULT_CUDAARCHS:
-- 72-real;87
+- 72-real;87-real;101f-real;101-virtual
 DEFAULT_TORCH_CUDA_ARCH_LIST:
-- 7.2;8.7+PTX
+- 7.2;8.7;10.1+PTX
 arm_variant_target:
 - tegra
 c_compiler:
@@ -27,7 +27,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 target_platform:
-- linux-aarch64
+- linux-64
 zip_keys:
 - - arm_variant_target
   - cross_target_platform
