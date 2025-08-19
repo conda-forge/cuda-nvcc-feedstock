@@ -2,6 +2,10 @@ c_compiler_version:        # [linux]
   - 12                     # [linux]
 cxx_compiler_version:      # [linux]
   - 12                     # [linux]
+c_compiler:                # [win]
+  - vs2019                 # [win]
+cxx_compiler:              # [win]
+  - vs2019                 # [win]
 arm_variant_target:
   - None
   - sbsa                   # [linux]
