@@ -92,38 +92,38 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9</td>
+              <td>linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIST5.0;_h080057bc</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;5_h4e26ded4b9" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIST5.0;_h080057bc" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759</td>
+              <td>linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIST5.0;_h46aad4ec</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;5_h6541862759" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIST5.0;_h46aad4ec" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualDEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7;10.1+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualDEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7;10.1+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67</td>
+              <td>linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIS_h528d2367</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS50-r_h46b94f2f67" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIS_h528d2367" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_aarch64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualDEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7;10.1+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS72-real;87DEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualDEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7;10.1+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
