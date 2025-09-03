@@ -42,6 +42,8 @@ else
     if [[ ! -z "${NVCC_PREPEND_FLAGS+x}" ]]
     then
         export NVCC_PREPEND_FLAGS_BACKUP="${NVCC_PREPEND_FLAGS}"
+    else
+        export NVCC_PREPEND_FLAGS_BACKUP="UNSET"
     fi
     NVCC_PREPEND_FLAGS="${NVCC_PREPEND_FLAGS} -ccbin=${CXX}"
     export NVCC_PREPEND_FLAGS
@@ -66,13 +68,15 @@ fi
 
 # Set good defaults for common target architectures according to host platform for common
 # configuration environment variables
-if [[ -z "${CUDAARCHS+x}" ]]
+if [[ ! -v CUDAARCHS ]]
 then
     export CUDAARCHS="@default_cudaarchs@"
+    export CUDAARCHS_BACKUP="UNSET"
 fi
-if [[ -z "${TORCH_CUDA_ARCH_LIST+x}" ]]
+if [[ ! -v TORCH_CUDA_ARCH_LIST ]]
 then
     export TORCH_CUDA_ARCH_LIST="@default_torch_cuda_arch_list@"
+    export TORCH_CUDA_ARCH_LIST_BACKUP="UNSET"
 fi
 
 # Exit with unclean status if there was an error
