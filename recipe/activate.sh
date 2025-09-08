@@ -63,17 +63,21 @@ else
     export NVCC_APPEND_FLAGS
 fi
 
-# Set good defaults for common target architectures according to host platform for common
-# configuration environment variables
-if [[ ! -v CUDAARCHS ]]
-then
-    export CUDAARCHS="@default_cudaarchs@"
-    export CUDAARCHS_BACKUP="UNSET"
-fi
-if [[ ! -v TORCH_CUDA_ARCH_LIST ]]
-then
-    export TORCH_CUDA_ARCH_LIST="@default_torch_cuda_arch_list@"
-    export TORCH_CUDA_ARCH_LIST_BACKUP="UNSET"
+if [ "${CONDA_BUILD:-0}" = "1" ]; then
+
+    # Set good defaults for common target architectures according to host platform for common
+    # configuration environment variables
+    if [[ ! -v CUDAARCHS ]]
+    then
+        export CUDAARCHS="@default_cudaarchs@"
+        export CUDAARCHS_BACKUP="UNSET"
+    fi
+    if [[ ! -v TORCH_CUDA_ARCH_LIST ]]
+    then
+        export TORCH_CUDA_ARCH_LIST="@default_torch_cuda_arch_list@"
+        export TORCH_CUDA_ARCH_LIST_BACKUP="UNSET"
+    fi
+
 fi
 
 # Exit with unclean status if there was an error
