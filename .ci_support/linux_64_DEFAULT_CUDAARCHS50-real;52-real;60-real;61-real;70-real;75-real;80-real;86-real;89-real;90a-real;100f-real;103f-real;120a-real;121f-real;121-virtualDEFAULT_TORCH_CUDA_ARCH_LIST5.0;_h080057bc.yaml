@@ -1,9 +1,9 @@
 DEFAULT_CUDAARCHS:
-- 72-real;87
+- 50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtual
 DEFAULT_TORCH_CUDA_ARCH_LIST:
-- 7.2;8.7+PTX
+- 5.0;5.2;6.0;6.1;7.0;7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTX
 arm_variant_target:
-- tegra
+- sbsa
 c_compiler:
 - gcc
 c_compiler_version:
