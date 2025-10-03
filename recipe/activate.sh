@@ -75,11 +75,6 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
         export CUDAARCHS="@default_cudaarchs@"
         export CUDAARCHS_BACKUP="UNSET"
     fi
-    if [[ ! -v TORCH_CUDA_ARCH_LIST ]]
-    then
-        export TORCH_CUDA_ARCH_LIST="@default_torch_cuda_arch_list@"
-        export TORCH_CUDA_ARCH_LIST_BACKUP="UNSET"
-    fi
 
 fi
 
