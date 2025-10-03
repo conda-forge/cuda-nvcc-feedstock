@@ -22,9 +22,3 @@ then
   unset CUDAARCHS
   unset CUDAARCHS_BACKUP
 fi
-
-if [[ "${TORCH_CUDA_ARCH_LIST_BACKUP}" == "UNSET" ]]
-then
-  unset TORCH_CUDA_ARCH_LIST
-  unset TORCH_CUDA_ARCH_LIST_BACKUP
-fi

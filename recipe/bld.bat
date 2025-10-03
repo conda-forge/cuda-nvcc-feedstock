@@ -3,7 +3,6 @@ setlocal enableextensions enabledelayedexpansion
 if errorlevel 1 exit 1
 
 sed -e "s/@default_cudaarchs@/%DEFAULT_CUDAARCHS%/g" ^
-    -e "s/@default_torch_cuda_arch_list@/%DEFAULT_TORCH_CUDA_ARCH_LIST%/g" ^
     %RECIPE_DIR%\activate.bat > %RECIPE_DIR%\activate-replaced.bat
 if errorlevel 1 exit 1
 
