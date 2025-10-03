@@ -1,7 +1,5 @@
 DEFAULT_CUDAARCHS:
 - 75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtual
-DEFAULT_TORCH_CUDA_ARCH_LIST:
-- 7.5;8.0;8.6;8.9;9.0;10.0;10.3;12.0;12.1+PTX
 arm_variant_target:
 - None
 c_compiler:
@@ -20,4 +18,3 @@ zip_keys:
 - - arm_variant_target
   - cross_target_platform
   - DEFAULT_CUDAARCHS
-  - DEFAULT_TORCH_CUDA_ARCH_LIST
