@@ -14,8 +14,3 @@ if "%CUDAARCHS_BACKUP%" == "UNSET" (
     set "CUDAARCHS="
     set "CUDAARCHS_BACKUP="
 )
-
-if "%TORCH_CUDA_ARCH_LIST_BACKUP%" == "UNSET" (
-    set "TORCH_CUDA_ARCH_LIST="
-    set "TORCH_CUDA_ARCH_LIST_BACKUP="
-)
