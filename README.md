@@ -92,38 +92,38 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIST5.0;_h080057bc</td>
+              <td>linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetNonecross_targ_h6269f6b6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIST5.0;_h080057bc" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetNonecross_targ_h6269f6b6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIST5.0;_h46aad4ec</td>
+              <td>linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetsbsacross_targ_h94433916</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIST5.0;_h46aad4ec" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetsbsacross_targ_h94433916" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualDEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7;10.1+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualDEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7;10.1+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIS_h528d2367</td>
+              <td>linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetsbsacross_h605f9794</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_TORCH_CUDA_ARCH_LIS_h528d2367" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetsbsacross_h605f9794" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualDEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7;10.1+PTXarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_aarch64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualDEFAULT_TORCH_CUDA_ARCH_LIST7.2;8.7;10.1+PTXarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -222,12 +222,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -254,7 +254,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/cuda-nvcc-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
