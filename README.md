@@ -106,10 +106,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -120,10 +120,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64</td>
+              <td>linux_aarch64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS72-real;87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
