@@ -9,19 +9,15 @@ cxx_compiler:              # [win]
 arm_variant_target:
   - None
   - sbsa                   # [linux]
-#  - tegra                  # [linux]
 cross_target_platform:
   - None           # [not (linux or win)]
   - linux-64       # [linux]
   - linux-aarch64  # [linux]
-#  - linux-aarch64  # [linux]
   - win-64         # [win]
-# https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#virtual-architecture-feature-list
-# https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#gpu-feature-list
 DEFAULT_CUDAARCHS:
   - "75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtual"
-  - "75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtual"  # [linux]
-#  - "72-real;87-real;110"  # [linux]
+  # aarch64 has more targets than x86 because Tegra devices are sbsa aarch64 only
+  - "75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtual"  # [linux]
 
 zip_keys:
   - arm_variant_target
