@@ -1,5 +1,5 @@
 DEFAULT_CUDAARCHS:
-- 75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtual
+- 75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtual
 arm_variant_target:
 - sbsa
 c_compiler:
@@ -23,7 +23,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 target_platform:
-- linux-64
+- linux-aarch64
 zip_keys:
 - - arm_variant_target
   - cross_target_platform
