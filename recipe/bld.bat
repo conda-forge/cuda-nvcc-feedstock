@@ -3,6 +3,7 @@ setlocal enableextensions enabledelayedexpansion
 if errorlevel 1 exit 1
 
 sed -e "s/@default_cudaarchs@/%DEFAULT_CUDAARCHS%/g" ^
+    -e "s/@default_nvcc_gencode@/%DEFAULT_NVCC_GENCODE%/g" ^
     %RECIPE_DIR%\activate.bat > %RECIPE_DIR%\activate-replaced.bat
 if errorlevel 1 exit 1
 

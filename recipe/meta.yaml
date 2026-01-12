@@ -26,6 +26,7 @@ build:
   # We need to reference these variables in the recipe or conda-smithy will prune them from
   # the conda_build_config
     - DEFAULT_CUDAARCHS={{ DEFAULT_CUDAARCHS }}
+    - DEFAULT_NVCC_GENCODE={{ DEFAULT_NVCC_GENCODE }}
 
 requirements:
   build:
