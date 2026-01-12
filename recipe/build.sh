@@ -10,6 +10,7 @@ do
     sed -e "s/@cross_target_platform@/$cross_target_platform/g" \
         -e "s/@arm_variant_target@/$arm_variant_target/g" \
         -e "s/@default_cudaarchs@/$DEFAULT_CUDAARCHS/g" \
+        -e "s/@default_nvcc_gencode@/$DEFAULT_NVCC_GENCODE/g" \
     "${RECIPE_DIR}/${CHANGE}.sh" > "${PREFIX}/etc/conda/${CHANGE}.d/~cuda-nvcc_${CHANGE}.sh"
 done
 
