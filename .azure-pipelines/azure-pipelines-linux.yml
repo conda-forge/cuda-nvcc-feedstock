@@ -8,24 +8,24 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      ? linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetNonecross_targ_h6269f6b6
-      : CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetNonecross_targ_h6269f6b6
+      ? linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arc_h33dcad2c
+      : CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arc_h33dcad2c
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetsbsacross_targ_h94433916
-      : CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetsbsacross_targ_h94433916
+      ? linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arc_hc5cc3abe
+      : CONFIG: linux_64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arc_hc5cc3abe
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64:
-        CONFIG: linux_64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64
+      ? linux_64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_87code=sm_87_-gencode_arch=compute_101fcode=sm_101f_-gencode_arch=compute_101code=compute_101_hc8f85cb7
+      : CONFIG: linux_64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_87code=sm_87_-gencode_arch=compute_101fcode=sm_101f_-gencode_arch=compute_101code=compute_101_hc8f85cb7
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetsbsacross_h605f9794
-      : CONFIG: linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualarm_variant_targetsbsacross_h605f9794
+      ? linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencod_ha34cf33f
+      : CONFIG: linux_aarch64_DEFAULT_CUDAARCHS50-real;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencod_ha34cf33f
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64:
-        CONFIG: linux_aarch64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualarm_variant_targettegracross_target_platformlinux-aarch64
+      ? linux_aarch64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_87code=sm_87_-gencode_arch=compute_101fcode=sm_101f_-gencode_arch=compute_101code=comput_h64125728
+      : CONFIG: linux_aarch64_DEFAULT_CUDAARCHS87-real;101f-real;101-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_87code=sm_87_-gencode_arch=compute_101fcode=sm_101f_-gencode_arch=compute_101code=comput_h64125728
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
   timeoutInMinutes: 360
