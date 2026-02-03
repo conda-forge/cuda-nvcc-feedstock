@@ -1,5 +1,5 @@
 {% set name = "cuda-nvcc-split" %}
-{% set version = "13.1.80" %}
+{% set version = "13.1.115" %}
 {% set cuda_version = "13.1" %}
 {% set exists = "which" %}  # [not win]
 {% set exists = "where" %}  # [win]
@@ -19,7 +19,7 @@ source:
 {% endif %}
 
 build:
-  number: {{ number }}
+  number: 0
   skip: true  # [osx or ppc64le]
   skip: true  # [target_platform != "linux-64" and target_platform != cross_target_platform]
   script_env:
