@@ -1,5 +1,11 @@
 DEFAULT_CUDAARCHS:
 - 75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtual
+DEFAULT_NVCC_GENCODE:
+- -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode
+  arch=compute_86,code=sm_86 -gencode arch=compute_89,code=sm_89 -gencode arch=compute_90a,code=sm_90a
+  -gencode arch=compute_100f,code=sm_100f -gencode arch=compute_103f,code=sm_103f
+  -gencode arch=compute_120a,code=sm_120a -gencode arch=compute_121f,code=sm_121f
+  -gencode arch=compute_121,code=compute_121
 arm_variant_target:
 - None
 c_compiler:
@@ -28,5 +34,6 @@ zip_keys:
 - - arm_variant_target
   - cross_target_platform
   - DEFAULT_CUDAARCHS
+  - DEFAULT_NVCC_GENCODE
 - - c_compiler_version
   - cxx_compiler_version
