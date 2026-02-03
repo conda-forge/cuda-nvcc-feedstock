@@ -17,4 +17,8 @@ if "%CONDA_BUILD%" == "1" (
         set "CUDAARCHS=@default_cudaarchs@"
         set "CUDAARCHS_BACKUP=UNSET"
     )
+    if not defined NVCC_GENCODE (
+        set "NVCC_GENCODE=@default_nvcc_gencode@"
+        set "NVCC_GENCODE_BACKUP=UNSET"
+    )
 )

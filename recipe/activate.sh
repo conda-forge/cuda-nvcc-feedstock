@@ -73,6 +73,12 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
         export CUDAARCHS_BACKUP="UNSET"
     fi
 
+    if [[ ! -v NVCC_GENCODE ]]
+    then
+        export NVCC_GENCODE="@default_nvcc_gencode@"
+        export NVCC_GENCODE_BACKUP="UNSET"
+    fi
+
 fi
 
 # Exit with unclean status if there was an error
