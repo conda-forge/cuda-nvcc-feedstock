@@ -22,3 +22,9 @@ then
   unset CUDAARCHS
   unset CUDAARCHS_BACKUP
 fi
+
+if [[ "${NVCC_GENCODE_BACKUP}" == "UNSET" ]]
+then
+  unset NVCC_GENCODE
+  unset NVCC_GENCODE_BACKUP
+fi

@@ -14,3 +14,8 @@ if "%CUDAARCHS_BACKUP%" == "UNSET" (
     set "CUDAARCHS="
     set "CUDAARCHS_BACKUP="
 )
+
+if "%NVCC_GENCODE_BACKUP%" == "UNSET" (
+    set "NVCC_GENCODE="
+    set "NVCC_GENCODE_BACKUP="
+)
