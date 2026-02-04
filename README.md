@@ -92,24 +92,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_75__h31c4d59b</td>
+              <td>linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_75__h16c6dea6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_75__h31c4d59b" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_75__h16c6dea6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_75_-gencode_arch=com_h6671ea13</td>
+              <td>linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_75_-gencode_arch=com_h1e0ca68a</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_75_-gencode_arch=com_h6671ea13" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_75_-gencode_arch=com_h1e0ca68a" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=s_h25bbfdeb</td>
+              <td>linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=s_h81688c2c</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19219&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=s_h25bbfdeb" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cuda-nvcc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=s_h81688c2c" alt="variant">
                 </a>
               </td>
             </tr><tr>
