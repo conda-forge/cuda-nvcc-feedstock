@@ -17,14 +17,18 @@ then
   unset NVCC_APPEND_FLAGS_BACKUP
 fi
 
-if [[ "${CUDAARCHS_BACKUP}" == "UNSET" ]]
-then
-  unset CUDAARCHS
-  unset CUDAARCHS_BACKUP
-fi
+if [ "${CONDA_BUILD:-0}" = "1" ]; then
 
-if [[ "${NVCC_GENCODE_BACKUP}" == "UNSET" ]]
-then
-  unset NVCC_GENCODE
-  unset NVCC_GENCODE_BACKUP
+  if [[ "${CUDAARCHS_BACKUP:-}" == "UNSET" ]]
+  then
+    unset CUDAARCHS
+    unset CUDAARCHS_BACKUP
+  fi
+
+  if [[ "${NVCC_GENCODE_BACKUP:-}" == "UNSET" ]]
+  then
+    unset NVCC_GENCODE
+    unset NVCC_GENCODE_BACKUP
+  fi
+
 fi
