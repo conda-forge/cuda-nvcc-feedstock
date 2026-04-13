@@ -1,5 +1,5 @@
 {% set name = "cuda-nvcc-split" %}
-{% set version = "13.2.51" %}
+{% set version = "13.2.78" %}
 {% set cuda_version = "13.2" %}
 {% set exists = "which" %}  # [not win]
 {% set exists = "where" %}  # [win]
