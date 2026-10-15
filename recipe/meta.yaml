@@ -14,7 +14,7 @@ source:
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
 build:
-  number: 0
+  number: 1
   # Linux-64 and win-64 build both native and cross-target packages; other platforms
   # build only their native target.
   #
