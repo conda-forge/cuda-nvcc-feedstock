@@ -6,6 +6,8 @@ DEFAULT_NVCC_GENCODE:
   -gencode arch=compute_90a,code=sm_90a -gencode arch=compute_100f,code=sm_100f -gencode
   arch=compute_103f,code=sm_103f -gencode arch=compute_110,code=sm_110 -gencode arch=compute_120a,code=sm_120a
   -gencode arch=compute_121f,code=sm_121f -gencode arch=compute_121,code=compute_121
+DOCKER_PLATFORM:
+- linux/amd64
 arm_variant_target:
 - sbsa
 c_compiler:
@@ -13,7 +15,7 @@ c_compiler:
 c_stdlib:
 - sysroot
 c_stdlib_version:
-- '2.17'
+- '2.28'
 channel_sources:
 - conda-forge
 channel_targets:
