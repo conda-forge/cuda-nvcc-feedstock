@@ -22,7 +22,7 @@ jobs:
       max-parallel: 50
       matrix:
         include:
-          - CONFIG: linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=_h16c6dea6
+          - CONFIG: linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;88-real;89-real;90a-real;100a-real;103f-real;107f-real;110f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GE_h604fdd3c
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -34,7 +34,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90a-real;100f-real;103f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_75code=sm_h1e0ca68a
+          - CONFIG: linux_64_DEFAULT_CUDAARCHS75-real;80-real;86-real;89-real;90a-real;100a-real;103f-real;107f-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode_arch=compute_h000acf5f
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
@@ -46,7 +46,7 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;89-real;90a-real;100f-real;103f-real;110-real;120a-real;121f-real;121-virtualDEFAULT_NVCC_GENCODE-gencode__h81688c2c
+          - CONFIG: linux_aarch64_DEFAULT_CUDAARCHS75-real;80-real;86-real;87-real;88-real;89-real;90a-real;100a-real;103f-real;107f-real;110f-real;120a-real;121f-real;121-virtualDEFAULT_NV_h1beaf52f
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
